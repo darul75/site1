@@ -1,0 +1,29 @@
+{
+  "name": "site1",
+  "version": "0.0.1",
+  "author": {
+    "name": "Julien Valéry",
+    "email": "darul75@gmail.com"
+  },
+  "homepage": "https://github.com/darul75/sit1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darul75/site1.git"
+  },
+  "dependencies": {
+    "fullpage.js": "~2.5.9",
+    "scrollReveal.js": "~2.1.0"
+  },
+  "authors": [
+    "darul <darul75@gmail.com>"
+  ],
+  "description": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
