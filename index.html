@@ -4,11 +4,16 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Site1 : ">    
+    <meta name="description" content="Site1 : ">   
+    <!-- http://designshack.net/articles/css/10-great-google-font-combinations-you-can-copy/  -->
+    <link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="javascripts/components/fullpage.js/jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="javascripts/components/ihover/src/ihover.min.css" />
+    <link rel="stylesheet" type="text/css" href="javascripts/components/animate.css/animate.min.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
     <script type="text/javascript" src="javascripts/components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/components/fullpage.js/jquery.fullPage.min.js"></script>
+    <script type="text/javascript" src="javascripts/components/fullpage.js/jquery.fullPage.js"></script>
     <script type="text/javascript" src="javascripts/components/scrollReveal.js/dist/scrollReveal.min.js"></script>    
     <title>Site1</title>
   </head>
@@ -19,10 +24,10 @@
     <div id="header_wrap" class="outer">
         <header class="inner">
           <ul id="menu">
-            <li data-menuanchor="one" class="active"><a href="#one">Notre philosophie</a></li>
-            <li data-menuanchor="two"><a href="#two">Qui sommes nous</a></li>
-            <li data-menuanchor="three"><a href="#three">Références</a></li>
-            <li data-menuanchor="four"><a href="#four">Contacts</a></li>
+            <li data-menuanchor="presentation" class="active animated swing"><a href="#presentation">Notre philosophie</a></li>
+            <li data-menuanchor="whoweare"><a href="#whoweare">Qui sommes nous</a></li>
+            <li data-menuanchor="references"><a href="#references">Références</a></li>
+            <li data-menuanchor="contacts"><a href="#contacts">Contacts</a></li>
           </ul>            
         </header>
     </div>
@@ -31,7 +36,7 @@
     <div id="main_content_wrap" class="outer">      
       <div id="fullpage">
         <div class="section" id="section1">
-          <section id="main_content" class="inner">
+          <section id="main_content">
             <div class="content-container">
               <header>
                 <h3>Section1</h3>
@@ -46,49 +51,64 @@
           <section id="main_content" class="inner">
             <div class="content-container">
               <header>
-                <h3><p data-sr> Chips Ahoy! </p></h3>
+                <h3><p data-sr class="rotateOutDownRight"> Chips Ahoy! </p></h3>
               </header>
               <div>
-                Content
+                <div class="ih-item circle effect13  from_left_and_right">
+                  <a href="#">
+                    <div class="img"><img src="http://www.quizz.biz/uploads/quizz/728441/7_GH592.jpg" alt="img"></div>
+                    <div class="info">
+                      <h3>Pierre Coeroli</h3>
+                      <p>Président</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="ih-item circle effect13  from_left_and_right">
+                  <a href="#">
+                    <div class="img"><img src="http://img.clubic.com/07507619-photo-anonyme.jpg" alt="img"></div>
+                    <div class="info">
+                      <h3>Heading here</h3>
+                      <p>Description goes here</p>
+                    </div>
+                  </a>
+                </div>
               </div>              
             </div>            
           </section>
         </div>
-        <div class="section">Some section</div>
-        <div class="section">
-          <div id="footer_wrap" class="outer">
-            coucou
-            <footer class="inner">
-              <p class="copyright">Site1 maintained by <a href="https://github.com/darul75">darul75</a></p>
-              <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-            </footer>
-          </div>
+        <div class="section" id="section3">Some section</div>
+        <div class="section" id="section4">
+          <section id="main_content">
+            <div class="content-container">
+              <header>
+                <h3>Contact</h3>
+              </header>
+              <form class="go-bottom">
+                <!-- <label for="Name">Name:</label>
+                <input type="text" name="Name" id="Name" /> -->
+                
+                <div>
+                  <textarea id="message" name="phone" rows="20" cols="20" required></textarea>
+                  <label for="message">Message</label>
+                </div>                        
 
-        </div>
+                <input type="button" id="submitEmail" name="submitEmail" value="Submit" class="submit-button" />
+              </form>
+              <!-- FOOTER  -->  
+             <!--  <div id="footer_wrap" class="outer">            
+                <footer class="inner">
+                  <p class="copyright">Site1 maintained by <a href="https://github.com/darul75">darul75</a></p>
+                  <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+                </footer>
+              </div> -->
+            </div>
+          </div>
+        </section>
       </div>      
     </div>
 
-    <!-- FOOTER  -->
-    <section>
+    <script type="text/javascript" src="javascripts/main.js"></script>
       
-    </section>
-
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $('#fullpage').fullpage({
-          sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE'],
-          anchors: ['one', 'two', 'three', 'four'],
-          menu: '#menu',
-          loopTop: true,
-          loopBottom: true,
-          css3: true,
-          scrollingSpeed: 400
-        });
-      });
-      window.sr = new scrollReveal();
-    </script>
-
-    
 
   </body>
 </html>
