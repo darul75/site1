@@ -11,10 +11,26 @@ $(document).ready(function() {
     sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE'],
     anchors: ['presentation', 'whoweare', 'references', 'contacts'],
     menu: '#menu',
-    loopTop: true,
-    loopBottom: true,
+    loopTop: false,
+    loopBottom: false,
     css3: true,
     scrollingSpeed: 800
+  });
+  var cssSlide = 'slideOutLeft';
+  var cssSlideBack = 'slideOutLeftBack';
+  $('.arrow-left').click(function() {
+    var parent = $(this).parent().parent();
+    var slided = parent.data("slided") || false;
+
+    if (!slided) {
+      parent.addClass(cssSlide);
+      parent.removeClass(cssSlideBack);
+    }
+    else {
+      parent.removeClass(cssSlide);
+      parent.addClass(cssSlideBack);
+    }
+    parent.data("slided", !slided)
   });
 });
 window.sr = new scrollReveal();

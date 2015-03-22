@@ -7,7 +7,7 @@ form,fieldset,input,textarea,p,blockquote,th,td {
     margin: 0;
 }
 a{
-	text-decoration:none;
+  text-decoration:none;
 }
 table {
     border-spacing: 0;
@@ -20,7 +20,7 @@ address,caption,cite,code,dfn,em,strong,th,var {
     font-style: normal;
 }
 strong{
-	font-weight: bold;
+  font-weight: bold;
 }
 ol,ul {
     list-style: none;
@@ -48,32 +48,30 @@ abbr,acronym { border: 0;
 /* Custom CSS
  * --------------------------------------- */
 body{
-	font-family: arial,helvetica;
-	color: #333;
-	color: rgba(0,0,0,0.5);
+  font-family: arial,helvetica;
+  color: #333;
+  color: rgba(0,0,0,0.5);
 }
 .wrap{
-	margin-left: auto;
-	margin-right: auto;
-	width: 960px;
-	position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+  position: relative;
 }
+
 h1{
-	font-size: 6em;
+  font-size: 6em;
 }
 p{
-	font-size: 2em;
+  font-size: 2em;
 }
 .intro p{
-	width: 50%;
-	margin: 0 auto;
-	font-size: 1.5em;
-}
-.section{
-	text-align:center;
+  width: 50%;
+  margin: 0 auto;
+  font-size: 1.5em;
 }
 #menu li {
-	display: inline-block;
+  display: inline-block;
   padding: 8px 15px;
   margin: 0px 10px;
   border-radius: 15px;
@@ -81,28 +79,28 @@ p{
   border: 1px solid rgba(0,0,0,0.3);
 }
 #menu li.active{
-	/*background:#666;
-	background: rgba(0,0,0, 0.5);
-	color: #fff;*/
+  /*background:#666;
+  background: rgba(0,0,0, 0.5);
+  color: #fff;*/
 }
 #menu li a{
-	text-decoration: none;
+  text-decoration: none;
   color: #fff;
 }
 #menu li.active a:hover{
-	text-decoration: underline;
+  text-decoration: underline;
   color: #fff;
 }
 #menu li:hover{
-	background: rgba(255,255,255, 0.8);
+  background: rgba(255,255,255, 0.8);
 }
 #menu li a,
 #menu li.active a{
-	padding: 9px 18px;
-	display:block;
+  padding: 9px 18px;
+  display:block;
 }
 #menu li.active a{
-	color: #fff;
+  color: #fff;
 }
 #highlight {
   border-radius: 15px;
@@ -111,8 +109,8 @@ p{
   display: inline-block;
   z-index: 0;
 }
-#menu {	
-	position: fixed;
+#menu { 
+  position: fixed;
   display: inline-block;
   margin: 0 auto;  
   padding: 8px 0;  
@@ -124,26 +122,66 @@ p{
 
 /* Menu
  * --------------------------------------- */
- #section1 {
- 	background-image: url(../images/berlin-1.jpg);
- }
- #section2 {
- 	background-image: url(../images/berlin-2.jpg);
- }
+
+/*https://css-tricks.com/perfect-full-page-background-image/*/
+#section1 {
+  background: url(../images/berlin-1.jpg) no-repeat center center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#section2 {
+  background: url(../images/berlin-2.jpg) no-repeat center center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 .content-container {
-	width: 67.5rem;
-	position: relative;
-	margin: 0 auto;
-	padding: 5rem 0;  
-	background: rgba(0,0,0,.35);
+  width: 67.5rem;
+  position: relative  
+  padding: 5rem 0;  
+  background: rgba(0,0,0,.35);
   color: #fff;
+}
+
+.home {
+  margin: auto 0;
+}
+
+.citation {
+  margin: 0 auto;
+  padding: 5rem 0;  
+  background: rgba(0,0,0,.65);
+  color: #fff;
+}
+
+.author {
+  float:right;
+}
+
+.arrow-left {
+  float: right;
+  margin: 0 auto;
+  width: 0;
+  height: 0;
+  border-top: 30px solid transparent;
+  border-bottom: 30px solid transparent;
+  border-right: 30px solid blue; 
 }
 
 @media screen and (min-width: 1601px)
 .content-container {
   width: 80vw;
   max-width: 80rem;
+}
+
+@media only screen and (min-width: 901px) {
+  div.content-container {
+    width: 1000px;
+  }
 }
 
 .content-container header {
