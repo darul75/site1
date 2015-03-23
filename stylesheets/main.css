@@ -127,7 +127,7 @@ p{
   -o-background-size: cover;
   background-size: cover;
 }
-#section2, #section3, #section4 {
+#section2, #section3, #section4, #section5, #section6 {
   background: url(../images/berlin-2.jpg) no-repeat center center; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
