@@ -32,12 +32,13 @@ caption,th {
 
 }
 h1,h2,h3,h4,h5,h6 {
-    font-weight: normal;
-    font-size: 100%;
-    margin:0;
-    padding:0;
-    color:#444;
+  font-weight: normal;
+  font-size: 100%;
+  margin: 0 55px;
+  padding:0;
+  color:#FAF4F4;
 }
+
 q:before,q:after {
     content:'';
 }
@@ -52,18 +53,14 @@ body{
   color: #333;
   color: rgba(0,0,0,0.5);
 }
-.wrap{
-  margin-left: auto;
-  margin-right: auto;
-  width: 960px;
-  position: relative;
-}
 
 h1{
-  font-size: 6em;
+  font-size: 3em;
 }
 p{
-  font-size: 2em;
+  font-size: 1.2em;
+  margin: 40px 60px;
+  line-height: 2rem;
 }
 .intro p{
   width: 50%;
@@ -96,7 +93,7 @@ p{
 }
 #menu li a,
 #menu li.active a{
-  padding: 9px 18px;
+  padding: 9px 8px;
   display:block;
 }
 #menu li.active a{
@@ -113,8 +110,7 @@ p{
   position: fixed;
   display: inline-block;
   margin: 0 auto;  
-  padding: 8px 0;  
-  background-color: #34495E;
+  padding: 8px 0;    
   width: 100%;
   z-index: 50;
   font-family: 'Raleway';
@@ -131,7 +127,7 @@ p{
   -o-background-size: cover;
   background-size: cover;
 }
-#section2 {
+#section2, #section3, #section4 {
   background: url(../images/berlin-2.jpg) no-repeat center center; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -141,54 +137,111 @@ p{
 
 .content-container {
   width: 67.5rem;
-  position: relative  
-  padding: 5rem 0;  
-  background: rgba(0,0,0,.35);
-  color: #fff;
+  position: relative;  
+  padding: 5rem 0;    
+  color: #DBDBDB;
+  padding-top: 25%;
+  height: 100%;
 }
 
-.home {
+.content-container.home {
   margin: auto 0;
+  background: rgba(0,0,0,.35);
+  margin-top: 50%;
+  padding-top: 0;
+  height: 0px;
 }
 
 .citation {
-  margin: 0 auto;
-  padding: 5rem 0;  
-  background: rgba(0,0,0,.65);
-  color: #fff;
+  background: rgba(19, 17, 17, 0.43);
+  bottom: 0px;  
+  font-size: 4em;
+  position: absolute;
+  width: 100%;
+  padding: 20px 30px;
+  font-size: 1.3rem;
+  line-height: 2rem;
+}
+
+.citation .text {
+  margin: 0 30px;  
+}
+
+.citation.home {
+  
 }
 
 .author {
   float:right;
+  font-size: 1.1rem;
+  margin: 0 30px;
 }
 
+/*HIDE/SHOW PART ARROW*/
 .arrow-left {
+  cursor: pointer;
   float: right;
-  margin: 0 auto;
-  width: 0;
+  margin: 0 auto;  
   height: 0;
-  border-top: 30px solid transparent;
-  border-bottom: 30px solid transparent;
-  border-right: 30px solid blue; 
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-right: 50px solid rgb(99, 99, 100); 
+  width: 0;
 }
 
-@media screen and (min-width: 1601px)
-.content-container {
-  width: 80vw;
-  max-width: 80rem;
+.arrow-right {
+  cursor: pointer;
+  float: right;
+  margin: 0 auto;  
+  height: 0;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-left: 50px solid rgb(99, 99, 100); 
+  width: 0;
+  left: 50px;
+  position: relative;
+  display:none;
+}
+
+.circle {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px; 
+  background: rgba(0, 216, 255, 0.38);
+}
+
+.rectangle {
+  border-radius: 10px;
+  height: 1px;
+  background: rgba(0, 216, 255, 0.38);
+}
+
+p.interventions {
+  font-size: 1em;
+  text-align: left;
+}
+
+p.expertise {
+  margin: 30px 60px;
+}
+
+div.intervention {
+  margin: 50px 0;
+}
+
+.bg {
+  height: 100%;
+  background: rgba(13, 14, 107, 0.9);
+}
+
+section {
+  height: 100%;
 }
 
 @media only screen and (min-width: 901px) {
-  div.content-container {
+  div.content-container, div.bg {
     width: 1000px;
   }
-}
-
-.content-container header {
-  width: 33.3%;
-  padding-right: 1.25rem;
-  box-sizing: border-box;
-  float: right;
 }
 
 .content-container .content {

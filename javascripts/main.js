@@ -9,7 +9,7 @@ $('#submitEmail').click(function(){
 $(document).ready(function() {
   $('#fullpage').fullpage({
     sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE'],
-    anchors: ['presentation', 'whoweare', 'references', 'contacts'],
+    anchors: ['presentation', 'qui-sommes-nous', 'apports', 'domaines-expertise', 'interventions','contacts'],
     menu: '#menu',
     loopTop: false,
     loopBottom: false,
@@ -18,8 +18,9 @@ $(document).ready(function() {
   });
   var cssSlide = 'slideOutLeft';
   var cssSlideBack = 'slideOutLeftBack';
-  $('.arrow-left').click(function() {
-    var parent = $(this).parent().parent();
+  $('.arrow').click(function() {
+    var hideArrow = $(this).hasClass('arrow-left');
+    var parent = $(this).parent().parent().parent().parent();
     var slided = parent.data("slided") || false;
 
     if (!slided) {
@@ -31,6 +32,8 @@ $(document).ready(function() {
       parent.addClass(cssSlideBack);
     }
     parent.data("slided", !slided)
+    $(this).hide();
+    $(this).siblings(hideArrow ? '.arrow-right' : '.arrow-left').show();
   });
 });
 window.sr = new scrollReveal();

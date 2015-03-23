@@ -5,12 +5,14 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="description" content="Site1 : ">   
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- http://designshack.net/articles/css/10-great-google-font-combinations-you-can-copy/  -->
     <link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="javascripts/components/fullpage.js/jquery.fullPage.css" />
     <link rel="stylesheet" type="text/css" href="javascripts/components/ihover/src/ihover.min.css" />
     <link rel="stylesheet" type="text/css" href="javascripts/components/animate.css/animate.css">
+    <link rel="stylesheet" href="stylesheets/flexiblegs.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
     <script type="text/javascript" src="javascripts/components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="javascripts/components/fullpage.js/jquery.fullPage.js"></script>
@@ -24,9 +26,11 @@
     <div id="header_wrap" class="outer">
         <header class="inner">
           <ul id="menu">
-            <li data-menuanchor="presentation" class="active animated swing"><a href="#presentation">Notre philosophie</a></li>
-            <li data-menuanchor="whoweare"><a href="#whoweare">Qui sommes nous</a></li>
-            <li data-menuanchor="references"><a href="#references">Références</a></li>
+            <li data-menuanchor="presentation" class="active animated swing"><a href="#presentation">A</a></li>
+            <li data-menuanchor="qui-sommes-nous" class="active animated swing"><a href="#qui-sommes-nous">Qui sommes nous</a></li>
+            <li data-menuanchor="apports"><a href="#apports">Apports</a></li>
+            <li data-menuanchor="domaines-expertise"><a href="#domaines-expertise">Domaines d'expertise</a></li>
+            <li data-menuanchor="interventions"><a href="#interventions">Interventions</a></li>
             <li data-menuanchor="contacts"><a href="#contacts">Contacts</a></li>
           </ul>            
         </header>
@@ -38,61 +42,191 @@
         <!-- SECTION HOME -->
         <div class="section" id="section1">
           <section id="main_content">
-            <div class="content-container">
-              <header>
-                <h3>Section1</h3>
-              </header>
-              <div>
-                Content
+            <div class="content-container home">
+              <div class="citation home">              
+                <div>
+                  Coucou les amis                  
+                </div>
+                <div class="author">
+                  John
+                <div>
               </div>              
             </div>            
           </section>
         </div>
         <!-- SECTION WHO -->
         <div class="section" id="section2">
-          <section id="main_content" class="inner">
-            <!-- <div class="content-container animated slideOutLeft"> -->
-            <div class="content-container animated">
-              <div>                
-                <h1>
-                  Qui sommes nous
-                  <!-- <p data-sr class="rotateOutDownRight"> Chips Ahoy! </p> -->
-                </h1>
-                <div class="arrow-left"></div>              
-                <!-- <div class="ih-item circle effect13  from_left_and_right">
-                  <a href="#">
-                    <div class="img"><img src="http://www.quizz.biz/uploads/quizz/728441/7_GH592.jpg" alt="img" width="100%"></div>
-                    <div class="info">
-                      <h3>Pierre Coeroli</h3>
-                      <p>Président</p>
-                    </div>
-                  </a>
+          <div class="bg animated">
+            <section id="main_content" class="inner">
+              <!-- <div class="content-container animated slideOutLeft"> -->
+              <div class="content-container">
+                <div>                
+                  <h1>Qui sommes nous</h1>
+                  <div class="arrow arrow-left"></div>
+                  <div class="arrow arrow-right"></div>              
+                  <!-- <div class="ih-item circle effect13  from_left_and_right">
+                    <a href="#">
+                      <div class="img"><img src="http://www.quizz.biz/uploads/quizz/728441/7_GH592.jpg" alt="img" width="100%"></div>
+                      <div class="info">
+                        <h3>Pierre Coeroli</h3>
+                        <p>Président</p>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="ih-item circle effect13  from_left_and_right">
+                    <a href="#">
+                      <div class="img"><img src="http://img.clubic.com/07507619-photo-anonyme.jpg" alt="img"></div>
+                      <div class="info">
+                        <h3>Heading here</h3>
+                        <p>Description goes here</p>
+                      </div>
+                    </a>
+                  </div>
+                </div> -->              
+                <div>
+                  <p>L’innovation modifie la relation au travail, chacun devient acteur et moteur. C’est l’ère du partage et de la transparence. Diriger, c’est donner du sens pour s’assurer de l’engagement des collaborateurs. Le management responsable, c’est jouer collectif et s’appuyer sur l’homme en lui même.</p>
+                  <p>Notre approche considère l’homme pour ce qu‘il est et non ce qu’il sait « substantifique moelle » de notre méthode cognitive. elle favorise la prise de conscience de son potentiel en lui permettant de maîtriser son devenir en accord avec la politique des ressources humaines de l’entreprise,. elle développe ses capacités de recul, active ses attitudes positives face à l’environnement, dans le but de le transformer en force de proposition pour devenir acteur responsable.</p>                
                 </div>
-                <div class="ih-item circle effect13  from_left_and_right">
-                  <a href="#">
-                    <div class="img"><img src="http://img.clubic.com/07507619-photo-anonyme.jpg" alt="img"></div>
-                    <div class="info">
-                      <h3>Heading here</h3>
-                      <p>Description goes here</p>
-                    </div>
-                  </a>
-                </div>
-              </div> -->              
-              <div>
-                <p>paragraphe 1</p>                
-              </div>                
-            </div>            
-            <div class="citation">
-              Coucou les amis
-              <div class="author">
-                John
-              <div>  
-            </div>                            
-          </div>                        
-          </section>          
+                <div class="citation">
+                  <div class="text">« Certaines personnes voient les choses comme elles sont et se demandent : Pourquoi ? Moi, je vois les choses comme elles pourraient être et je me dis : Pourquoi pas ? «
+                  </div>
+                  <div class="author">
+                    John Fitzgerald Kennedy
+                  <div>
+                </div>                
+              </div>                                    
+            </section>
+          </div>
         </div>
-        <div class="section" id="section3">Some section</div>
+        <!-- SECTION APPORT -->
+        <div class="section" id="section3">
+          <div class="bg animated">
+            <section id="main_content" class="inner">              
+              <div class="content-container">
+                <div>                
+                  <h1>
+                    Apports                    
+                  </h1>
+                  <div class="arrow arrow-left"></div>
+                  <div class="arrow arrow-right"></div>                           
+                  <div>
+                    <p>Notre capital expertise, acquis depuis de nombreuses années, facilite la compréhension de nos clients</p>
+                    <p>Nous optimisons leurs demandes de nos clients par l’apport de méthodes innovantes</p>               
+                    <p>Vous maîtrisez les enjeux de nos interventions, notre implication est totale</p>
+                  </div>
+                  <div class="citation">
+                    <div class="text">« le bon jugement vient de l’expérience et l’expérience vient du jugement
+                    </div>
+                    <div class="author">
+                      Benjamin Franklin
+                    <div>
+                  </div>                
+              </div>                                    
+            </section>
+          </div>
+        </div>
+        <!-- SECTION EXPERTISES -->
         <div class="section" id="section4">
+          <div class="bg animated">
+            <section id="main_content" class="inner">              
+              <div class="content-container">
+                <div>                
+                  <h1>
+                    Domaines d'expertises                    
+                  </h1>
+                  <div class="arrow arrow-left"></div>
+                  <div class="arrow arrow-right"></div>             
+
+                  <div class="grid">
+                    <div class="grid__col grid__col--1-of-3">                      
+                      <p class="expertise">Management de transition</p>
+                    </div>
+                    <div class="grid__col grid__col--1-of-3">
+                      <div class="rectangle"></div>
+                      <p class="expertise">Création d’une Direction et de son équipe</p>
+                    </div>
+                    <div class="grid__col grid__col--1-of-3">
+                      <div class="rectangle"></div>
+                      <p class="expertise">Mise en œuvre d’une politique R.H. en synergie avec les besoins stratégiques</p>
+                    </div>
+                    <div class="grid__col grid__col--1-of-3">
+                      <div class="rectangle"></div>
+                      <p class="expertise">Harmonisation des engagements au sein des équipes managériales</p>
+                    </div>
+                    <div class="grid__col grid__col--1-of-3">
+                      <div class="rectangle"></div>
+                      <p class="expertise">Audit social</p> 
+                    </div>
+                    <div class="grid__col grid__col--1-of-3">
+                      <div class="rectangle"></div>
+                      <p class="expertise">Assesment cognitif</p>
+                    </div>                    
+                  </div>
+
+                  <div class="citation">
+                    <div class="text">« Ceux qui résistent au changement finissent par accepter, mais dans douleur, qu’ils étaient dans l’erreur
+                    </div>
+                    <div class="author">
+                      Peter Drucker
+                    <div>
+                  </div>                
+              </div>                                    
+            </section>
+          </div>
+        </div>
+        <!-- SECTION INTERVENTIONS -->
+        <div class="section" id="section5">
+          <div class="bg animated">
+            <section id="main_content" class="inner">              
+              <div class="content-container">
+                <div>                
+                  <h1>Interventions</h1>
+                  <div class="arrow arrow-left"></div>
+                  <div class="arrow arrow-right"></div>  
+
+                  
+                  <div class="wrap gutter-10-xs gutter-out-xs">
+                    <div class="xl-4-10">   
+                      <div class="intervention">                   
+                        <span class="circle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        Management de transition
+                      </div>
+                      <div class="intervention">
+                        <span class="circle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        Management de transition
+                      </div>
+                      <div class="intervention">
+                        <span class="circle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        Management de transition
+                      </div>
+                      <div class="intervention">
+                        <span class="circle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        Management de transition
+                      </div>
+                      <div class="intervention">
+                        <span class="circle">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                        Management de transition
+                      </div>  
+                    </div>
+                    <div class="xl-4-10">
+                      <p class="interventions">L’assesment cognitif est une méthode élaborée par Paris V La Sorbonne utilisée au sein d’Apis-Lazuli pour donner une valeur ajoutée significative aux missions citées ci-dessus.</p>
+                      <!-- <p>C’est un outil de détection des potentiels et des compétences, dont les visées sont la découverte des qualités intrinsèques et non le vernis des connaissances.</p>
+                      <p>Il se focalise particulièrement sur l’adaptation, la flexibilité, la prise de décision, le raisonnement et les capacités d’apprentissage, de management et les styles de communication</p>-->
+                    </div>
+                  </div>                  
+
+                  <div class="citation">
+                    <div class="text">« le bon jugement vient de l’expérience et l’expérience vient du jugement
+                    </div>
+                    <div class="author">
+                      Benjamin Franklin
+                    <div>
+                  </div>                
+              </div>                                    
+            </section>
+          </div>
+        </div>
+        <div class="section" id="section6">
           <section id="main_content">
             <div class="content-container">
               <header>
