@@ -6,18 +6,20 @@ $('#submitEmail').click(function(){
     );
 });
 
-$(document).ready(function() {
-  $('#fullpage').fullpage({
-    sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE'],
-    anchors: ['presentation', 'qui-sommes-nous', 'apports', 'domaines-expertise', 'interventions','contacts'],
-    menu: '#menu',
-    loopTop: false,
-    loopBottom: false,
-    css3: true,
-    scrollingSpeed: 800
-  });
+
+function scrollB(section) {
+  scrollToSection(section);
+}
+
+function notHome(section) {
+  console.log(section);
+}
+
+$(document).ready(function() {  
   var cssSlide = 'slideOutLeft';
   var cssSlideBack = 'slideOutLeftBack';
+
+
   $('.arrow').click(function() {
     var hideArrow = $(this).hasClass('arrow-left');
     var parent = $(this).parent().parent().parent().parent();
@@ -36,7 +38,7 @@ $(document).ready(function() {
     $(this).siblings(hideArrow ? '.arrow-right' : '.arrow-left').show();
   });
 });
-window.sr = new scrollReveal();
+//window.sr = new scrollReveal();
 
 /*http://codepen.io/adi52i/pen/pxLou*/
 

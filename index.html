@@ -5,41 +5,208 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="description" content="Site1 : ">   
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
     <!-- http://designshack.net/articles/css/10-great-google-font-combinations-you-can-copy/  -->
     <link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="javascripts/components/fullpage.js/jquery.fullPage.css" />
-    <link rel="stylesheet" type="text/css" href="javascripts/components/ihover/src/ihover.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="javascripts/components/fullpage.js/jquery.fullPage.css" />
+    <link rel="stylesheet" type="text/css" href="javascripts/components/ihover/src/ihover.min.css" />    
+    <link rel="stylesheet" href="stylesheets/flexiblegs.css">-->    
     <link rel="stylesheet" type="text/css" href="javascripts/components/animate.css/animate.css">
-    <link rel="stylesheet" href="stylesheets/flexiblegs.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/grid.css" />
+    <link rel="stylesheet" type="text/css" href="javascripts/components/Parallax-JS/css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="javascripts/components/Parallax-JS/css/chrome.css"/>
     <link rel="stylesheet" type="text/css" href="stylesheets/main.css" />
     <script type="text/javascript" src="javascripts/components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/components/fullpage.js/jquery.fullPage.js"></script>
-    <script type="text/javascript" src="javascripts/components/scrollReveal.js/dist/scrollReveal.min.js"></script>    
+    <script type="text/javascript" src="javascripts/components/Parallax-JS/backgrounds.js"></script>
+    <script type="text/javascript" src="javascripts/components/Parallax-JS/kinetics.js"></script>
+    <!-- parallax.js really screws with the DOM, so make sure it's included last so other things don't notice :) -->
+    <script type="text/javascript" src="javascripts/components/Parallax-JS/parallax.js"></script>
+    <script type="text/javascript" src="javascripts/main.js"></script>
+    
     <title>Site1</title>
   </head>
 
   <body>
 
     <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <ul id="menu">
-            <li data-menuanchor="presentation" class="active animated swing"><a href="#presentation">A</a></li>
-            <li data-menuanchor="qui-sommes-nous" class="active animated swing"><a href="#qui-sommes-nous">Qui sommes nous</a></li>
-            <li data-menuanchor="apports"><a href="#apports">Apports</a></li>
-            <li data-menuanchor="domaines-expertise"><a href="#domaines-expertise">Domaines d'expertise</a></li>
-            <li data-menuanchor="interventions"><a href="#interventions">Interventions</a></li>
-            <li data-menuanchor="contacts"><a href="#contacts">Contacts</a></li>
-          </ul>            
-        </header>
+    <div class="outer header_menu">
+      <header class="inner">
+        <ul id="menu">
+          <li data-menuanchor="presentation" class="active animated swing"><a href="#presentation"><img src="images/logo-blue.svg" height="70px" class="animated bounce" onclick="scrollB('qui_sommes_nous')"/></a></li>
+          <li data-menuanchor="qui-sommes-nous" class="active animated"><a href="#qui-sommes-nous">Qui sommes nous</a></li>
+          <li data-menuanchor="apports"><a href="#apports">Apports</a></li>
+          <li data-menuanchor="domaines-expertise"><a href="#domaines-expertise">Domaines d'expertise</a></li>
+          <li data-menuanchor="interventions"><a href="#interventions">Interventions</a></li>
+          <li data-menuanchor="contacts"><a href="#contacts">Contacts</a></li>
+        </ul>            
+      </header>
     </div>
 
-    <!-- MAIN CONTENT -->
+      <div id="mock-scroller"></div>
+  <ul id="nav"></ul>
+
+  <div id="content">
+    <section id="story-header">
+      <img class="bg animate" src="images/berlin-1.jpg">
+      <div class="story home">
+        <div class="layout">
+          <div class="layout-content">
+            <div class="chapter home">       
+              <div class="logo-white">
+                <div>
+                  <img src="images/logo-blanc.svg" class="animated bounce" onclick="scrollB('qui_sommes_nous')"/>
+                </div>
+                <div class="citation home">
+                <div class="text">Il est impossible d'enseigner quelquechose à quelqu'un, vous ne pouvez l'aider qu'à le découvrir en lui
+                </div>
+                <div class="author">
+                  Galilée
+                <div>
+              </div>
+              </div>       
+              
+                                                
+            </div>
+          </div>
+        </div>        
+      </div>     
+      <!-- <div class="footer" class="outer">            
+        <footer class="inner">                    
+          <span class="copyright">© 2015 Julien Valéry</span>
+          <span class="copyright">Mentions Légales</span>
+          <span class="copyright">Contact</span>
+        </footer>
+      </div> -->
+    </section>    
+
+
+    <section id="story-qui_sommes_nous" anim-pause="1000" onFocus="notHome">
+      <!--  -->
+      <img class="bg animate" src="images/berlin-2.jpg" anim-detached="true" />
+      <div class="story">
+        <div class="layout">
+          <div class="layout-content">
+            <div class="chapter animated">
+              <!-- <img src="images/berlin-2.jpg" height="100px"/> -->
+              <div class="chapter-content">
+                  <div class="grid">
+                    <div class="grid__col grid__col--1-of-2">
+                        <h1>Qui sommes nous</h1>                                             
+                          <p>L’innovation modifie la relation au travail, chacun devient acteur et moteur. C’est l’ère du partage et de la transparence. Diriger, c’est donner du sens pour s’assurer de l’engagement des collaborateurs. Le management responsable, c’est jouer collectif et s’appuyer sur l’homme en lui même.</p>
+                          <p>Notre approche considère l’homme pour ce qu‘il est et non ce qu’il sait « substantifique moelle » de notre méthode cognitive. elle favorise la prise de conscience de son potentiel en lui permettant de maîtriser son devenir en accord avec la politique des ressources humaines de l’entreprise,. elle développe ses capacités de recul, active ses attitudes positives face à l’environnement, dans le but de le transformer en force de proposition pour devenir acteur responsable.</p>
+                    </div>
+                    <div class="grid__col grid__col--1-of-2">
+                      <div class="citation">
+                        <div class="text">« Certaines personnes voient les choses comme elles sont et se demandent : Pourquoi ? Moi, je vois les choses comme elles pourraient être et je me dis : Pourquoi pas ? «
+                        </div>
+                        <div class="author">
+                          John Fitzgerald Kennedy
+                        <div>
+                      </div>                    
+                    </div>                    
+                  </div>                                                         
+              </div> 
+              <div class="smart-object-parent">
+                <div class="smart-object" style="position: absolute; -webkit-transform-style: flat; -webkit-backface-visibility: hidden; -webkit-transform: translate3d(10px, 18px, 0px) rotate(-90deg); width: 24px; height: 11px; pointer-events: none;">
+                  <div class="smart-object" style="position: absolute; -webkit-transform-style: flat; -webkit-backface-visibility: hidden; -webkit-transform: translate3d(-1px, 4px, 0px) rotate(-45deg); width: 15px; height: 1px; background-color: rgb(255, 255, 255);"></div>
+                  <div class="smart-object" style="position: absolute; -webkit-transform-style: flat; -webkit-backface-visibility: hidden; -webkit-transform: translate3d(10px, 4px, 0px) rotate(45deg); width: 15px; height: 1px; background-color: rgb(255, 255, 255);"></div></div>              
+              </div>
+              <div class="arrow arrow-left"></div>
+              <div class="arrow arrow-right"></div>
+            </div>              
+          </div>
+         </div> 
+      </div>
+    </section>
+
+
+    <section id="story-william">
+      <img class="bg animate" src="images/berlin-1.jpg" anim-detached="true" />
+      <div class="story">
+        <div class="chapter">
+          <h2>Background parallax</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula aliquam eros a tempus. Aenean sodales dictum augue, in faucibus nisi sollicitudin eu. Quisque et urna lacus, quis aliquam purus. Nulla semper arcu vel diam auctor condimentum. Nam molestie sem eu quam fermentum a tempus nisi aliquet. Maecenas sit amet tincidunt elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla facilisi. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce nec ipsum ac mauris imperdiet luctus sed vitae ligula. Phasellus nec hendrerit neque.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="story-bing">
+      <img class="bg animate" src="images/berlin-2.jpg" anim-detached="true" />
+      <div class="story">
+        <div class="chapter">
+          <h2>Background parallax</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula aliquam eros a tempus. Aenean sodales dictum augue, in faucibus nisi sollicitudin eu. Quisque et urna lacus, quis aliquam purus. Nulla semper arcu vel diam auctor condimentum. Nam molestie sem eu quam fermentum a tempus nisi aliquet. Maecenas sit amet tincidunt elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla facilisi. Nulla facilisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce nec ipsum ac mauris imperdiet luctus sed vitae ligula. Phasellus nec hendrerit neque.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+   
+    <section id="story-foo" anim-pause="500">
+      <div class="story">
+        <div class="chapter">
+          <h2>Misc. Stuff</h2>
+          <p>Some more parallax stuff.</p>
+        </div>  
+      </div>
+    </section>
+  </div>
+
+<!-- 
+    <div id="mock-scroller"></div>
+    <div id="content">
+      <section id="story-header">
+        <img class="bg" src="images/berlin-1.jpg" />
+        <div class="story"> 
+          <div class="content-container home">
+            <div class="citation home">              
+              <div>
+                Coucou les amis                  
+              </div>
+              <div class="author">
+                John
+              <div>
+            </div>              
+          </div>          
+        </div>
+      </section>
+      <section id="story-intel" anim-pause="1000">
+        <img class="bg animate" src="images/berlin-2.jpg" anim-detached="true" />
+        <div class="story">
+          coucou
+          <div class="content-container">
+            <div>                
+              <h1>Qui sommes nous</h1>
+              <div class="arrow arrow-left"></div>
+              <div class="arrow arrow-right"></div>                          
+            <div>
+              <p>L’innovation modifie la relation au travail, chacun devient acteur et moteur. C’est l’ère du partage et de la transparence. Diriger, c’est donner du sens pour s’assurer de l’engagement des collaborateurs. Le management responsable, c’est jouer collectif et s’appuyer sur l’homme en lui même.</p>
+              <p>Notre approche considère l’homme pour ce qu‘il est et non ce qu’il sait « substantifique moelle » de notre méthode cognitive. elle favorise la prise de conscience de son potentiel en lui permettant de maîtriser son devenir en accord avec la politique des ressources humaines de l’entreprise,. elle développe ses capacités de recul, active ses attitudes positives face à l’environnement, dans le but de le transformer en force de proposition pour devenir acteur responsable.</p>                
+            </div>
+            <div class="citation">
+              <div class="text">« Certaines personnes voient les choses comme elles sont et se demandent : Pourquoi ? Moi, je vois les choses comme elles pourraient être et je me dis : Pourquoi pas ? «
+              </div>
+              <div class="author">
+                John Fitzgerald Kennedy
+              <div>
+            </div>                
+          </div> 
+        </div>
+      </section>
+      
+    </div>
+
+
+    <!-- MAIN CONTENT 
     <div id="main_content_wrap" class="outer">      
       <div id="fullpage">
-        <!-- SECTION HOME -->
+        // SECTION HOME
         <div class="section" id="section1">
           <section id="main_content">
             <div class="content-container home">
@@ -54,51 +221,15 @@
             </div>            
           </section>
         </div>
-        <!-- SECTION WHO -->
+        // SECTION WHO 
         <div class="section" id="section2">
           <div class="bg animated">
-            <section id="main_content" class="inner">
-              <!-- <div class="content-container animated slideOutLeft"> -->
-              <div class="content-container">
-                <div>                
-                  <h1>Qui sommes nous</h1>
-                  <div class="arrow arrow-left"></div>
-                  <div class="arrow arrow-right"></div>              
-                  <!-- <div class="ih-item circle effect13  from_left_and_right">
-                    <a href="#">
-                      <div class="img"><img src="http://www.quizz.biz/uploads/quizz/728441/7_GH592.jpg" alt="img" width="100%"></div>
-                      <div class="info">
-                        <h3>Pierre Coeroli</h3>
-                        <p>Président</p>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="ih-item circle effect13  from_left_and_right">
-                    <a href="#">
-                      <div class="img"><img src="http://img.clubic.com/07507619-photo-anonyme.jpg" alt="img"></div>
-                      <div class="info">
-                        <h3>Heading here</h3>
-                        <p>Description goes here</p>
-                      </div>
-                    </a>
-                  </div>
-                </div> -->              
-                <div>
-                  <p>L’innovation modifie la relation au travail, chacun devient acteur et moteur. C’est l’ère du partage et de la transparence. Diriger, c’est donner du sens pour s’assurer de l’engagement des collaborateurs. Le management responsable, c’est jouer collectif et s’appuyer sur l’homme en lui même.</p>
-                  <p>Notre approche considère l’homme pour ce qu‘il est et non ce qu’il sait « substantifique moelle » de notre méthode cognitive. elle favorise la prise de conscience de son potentiel en lui permettant de maîtriser son devenir en accord avec la politique des ressources humaines de l’entreprise,. elle développe ses capacités de recul, active ses attitudes positives face à l’environnement, dans le but de le transformer en force de proposition pour devenir acteur responsable.</p>                
-                </div>
-                <div class="citation">
-                  <div class="text">« Certaines personnes voient les choses comme elles sont et se demandent : Pourquoi ? Moi, je vois les choses comme elles pourraient être et je me dis : Pourquoi pas ? «
-                  </div>
-                  <div class="author">
-                    John Fitzgerald Kennedy
-                  <div>
-                </div>                
-              </div>                                    
+            <section id="main_content" class="inner">              
+                                                  
             </section>
           </div>
         </div>
-        <!-- SECTION APPORT -->
+        // SECTION APPORT
         <div class="section" id="section3">
           <div class="bg animated">
             <section id="main_content" class="inner">              
@@ -125,7 +256,7 @@
             </section>
           </div>
         </div>
-        <!-- SECTION EXPERTISES -->
+        // SECTION EXPERTISES
         <div class="section" id="section4">
           <div class="bg animated">
             <section id="main_content" class="inner">              
@@ -174,7 +305,7 @@
             </section>
           </div>
         </div>
-        <!-- SECTION INTERVENTIONS -->
+        // SECTION INTERVENTIONS
         <div class="section" id="section5">
           <div class="bg animated">
             <section id="main_content" class="inner">              
@@ -209,9 +340,7 @@
                       </div>  
                     </div>
                     <div class="xl-4-10">
-                      <p class="interventions">L’assesment cognitif est une méthode élaborée par Paris V La Sorbonne utilisée au sein d’Apis-Lazuli pour donner une valeur ajoutée significative aux missions citées ci-dessus.</p>
-                      <!-- <p>C’est un outil de détection des potentiels et des compétences, dont les visées sont la découverte des qualités intrinsèques et non le vernis des connaissances.</p>
-                      <p>Il se focalise particulièrement sur l’adaptation, la flexibilité, la prise de décision, le raisonnement et les capacités d’apprentissage, de management et les styles de communication</p>-->
+                      <p class="interventions">L’assesment cognitif est une méthode élaborée par Paris V La Sorbonne utilisée au sein d’Apis-Lazuli pour donner une valeur ajoutée significative aux missions citées ci-dessus.</p>                      
                     </div>
                   </div>                  
 
@@ -232,9 +361,8 @@
               <header>
                 <h3>Contact</h3>
               </header>
-              <form class="go-bottom">
-                <!-- <label for="Name">Name:</label>
-                <input type="text" name="Name" id="Name" /> -->
+              <form class="go-bottom">                
+                // <input type="text" name="Name" id="Name" />
                 
                 <div>
                   <textarea id="message" name="phone" rows="20" cols="20" required></textarea>
@@ -243,20 +371,21 @@
 
                 <input type="button" id="submitEmail" name="submitEmail" value="Submit" class="submit-button" />
               </form>
-              <!-- FOOTER  -->  
-             <!--  <div id="footer_wrap" class="outer">            
+              //FOOTER 
+             <div id="footer_wrap" class="outer">            
                 <footer class="inner">
                   <p class="copyright">Site1 maintained by <a href="https://github.com/darul75">darul75</a></p>
                   <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
                 </footer>
-              </div> -->
+              </div>
             </div>
           </div>
         </section>
       </div>      
     </div>
+    -->
 
-    <script type="text/javascript" src="javascripts/main.js"></script>
+    <!--<script type="text/javascript" src="javascripts/main.js"></script>-->
       
 
   </body>

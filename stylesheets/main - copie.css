@@ -116,23 +116,15 @@ p{
   font-family: 'Raleway';
 }
 
-/* Menu
+/* Content
  * --------------------------------------- */
 
-/*https://css-tricks.com/perfect-full-page-background-image/*/
-#section1 {
-  background: url(../images/berlin-1.jpg) no-repeat center center; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-#section2, #section3, #section4, #section5, #section6 {
-  background: url(../images/berlin-2.jpg) no-repeat center center; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+#header_menu {
+  /*float: left;*/
+  background-color: #FFF;
+  z-index: 2;
+  position: absolute;
+  visibility: hidden;
 }
 
 .content-container {
@@ -142,6 +134,7 @@ p{
   color: #DBDBDB;
   padding-top: 25%;
   height: 100%;
+  background-color: #FFF;
 }
 
 .content-container.home {
@@ -239,7 +232,7 @@ section {
 }
 
 @media only screen and (min-width: 901px) {
-  div.content-container, div.bg {
+  div.content-container {
     width: 1000px;
   }
 }
