@@ -7,7 +7,7 @@
   display: none;
   visibility: hidden;
   width: 1000px;
-  height: 103px;
+  height: 80px;
   z-index: 2;
 }
 
@@ -94,7 +94,7 @@ p {
 
 .header_menu .menu-toggle {
   position: absolute;
-  top: 27px;
+  top: 25px;
   right: 19px;
   margin: 0;
   width: 40px;
@@ -189,9 +189,10 @@ div.first {
 }
 
 .citation {  
-  position: absolute;
+  position: relative;
   font-size: 4rem;  
   bottom: 20%;  
+  margin-top: 50%;
   padding: 20px 30px;
   font-size: 1.3rem;
   line-height: 2rem;
@@ -200,7 +201,7 @@ div.first {
 .citation.home {
   color: #97D4C8;  
   bottom: 0px;
-  margin: 20px 77px;
+  margin: 0px 185px;
   position: relative;
 }
 
