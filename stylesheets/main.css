@@ -22,11 +22,11 @@
 
 h1 {
   font-size: 2rem;
-  margin: 20px 0;
+  margin: 50px 0;
 }
 
 p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   line-height: 2rem;
 }
 
@@ -41,6 +41,10 @@ p {
   bottom: 0;
   right: 0;
   text-align: center;
+}
+
+.logo-home {
+  
 }
 
 .smart-object-parent {
@@ -69,6 +73,7 @@ p {
 #menu li a{
   text-decoration: none;
   color: #0C2D8C;
+  font-size: 1.2rem;
 }
 #menu li.active a:hover{
   text-decoration: underline;
@@ -84,6 +89,17 @@ p {
 }
 #menu li.active a{
   color: #184ec6;
+}
+
+.header_menu .menu-toggle {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  background: transparent url("../images/sprites.png") -176px 4px no-repeat;
+  cursor: pointer;
 }
 
 .layout {  
@@ -104,6 +120,26 @@ p {
   opacity: 0.7;     */
 }
 
+.rectangle {
+  width: 60px;
+  height: 60px;  
+}
+
+.color-1 { background-color: #0C2D8C; }
+.color-2 { background-color: #061B6A; }
+.color-3 { background-color: #0C2D8C; }
+.color-4 { background-color: #0F3FAA; }
+.color-5 { background-color: #0C2D8C; }
+
+
+.white-rect-above {
+  width: 22px;
+  height: 20px;
+  position: absolute;
+  background-color: #FFF;
+  top: 103px;
+}
+
 section .story {
   background-color: rgba(26, 61, 132, 0.7);
 }
@@ -121,12 +157,16 @@ div.first {
 }
 
 .chapter {
-  position: relative;
-  background-color: #FFF;
+  position: relative;  
   height: 100%;
   opacity: 1.0;
   margin: 0;
   width: 1000px;
+}
+
+.chapter-white {  
+  background-color: #FFF;
+  height: 85%;  
 }
 
 .home {
@@ -170,7 +210,7 @@ div.first {
   height: 0;
   border-top: 50px solid transparent;
   border-bottom: 50px solid transparent;
-  border-right: 50px solid rgb(99, 99, 100); 
+  border-right: 50px solid rgb(67, 67, 70); 
   width: 0;
 }
 
@@ -181,7 +221,7 @@ div.first {
   height: 0;
   border-top: 50px solid transparent;
   border-bottom: 50px solid transparent;
-  border-left: 50px solid rgb(99, 99, 100); 
+  border-left: 50px solid rgb(67, 67, 70);
   width: 0;
   left: 50px;
   position: relative;

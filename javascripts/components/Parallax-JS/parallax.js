@@ -16,8 +16,13 @@ $(function(){
 	  , iAnimTimeout, iWindowHeight, sLastHash, iMaxHeight, iWinScrTop, iLastScrTime, iScrTimeout, sWinSize, kinetics
 	  ;
 
-	function headerShow(section) {
-		var header = $('.header_menu').clone();	
+	function headerShow(section, index) {
+		var header = $('.header_menu').clone();
+
+		header.find('li').on( 'click', 'a', function(){
+	    	scrollToSection( $( this ).attr( 'href' ).substr( 1 ) );
+	   	});	   	
+
 		$($(section).find('.layout-content')[0]).prepend(header);		
 		header.show();
 		header.css('visibility', 'visible');
@@ -27,7 +32,7 @@ $(function(){
 
 		$(section).find('.layout-content .arrow').click(function() {
 		    var hideArrow = $(this).hasClass('arrow-left');
-		    var parent = $(this).parent().parent().parent();
+		    var parent = $(this).parent().parent().parent().parent();
 		    var slided = parent.data("slided") || false;
 
 		    if (!slided) {
@@ -51,7 +56,7 @@ $(function(){
 		$sec.data( 'bSection', true );
 
 		if (ix > 0) {
-			headerShow($sec);
+		 	headerShow($sec, ix);
 		}
 
 		$sec.add( $sec.data( '$pNodes' ) ).each( function(){
