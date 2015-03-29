@@ -192,6 +192,10 @@ div.first {
   .chapter-img {
     height: 100px;
   }
+
+  .logo-home {
+    height: 150px;
+  }
 }
 
 /*div.who {
