@@ -32,7 +32,7 @@ $(function(){
 
 		$(section).find('.layout-content .arrow').click(function() {
 		    var hideArrow = $(this).hasClass('arrow-left');
-		    var parent = $(this).parent().parent().parent().parent();
+		    var parent = $(this).parent().parent().parent();
 		    var slided = parent.data("slided") || false;
 
 		    if (!slided) {
