@@ -21,13 +21,14 @@
 }
 
 h1 {
-  font-size: 2rem;
-  margin: 20px 0;
+  font-size: 1.5rem;
+  margin: 10px 0;
 }
 
 p {
-  font-size: 1.1rem;
-  line-height: 1.8rem;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  font-weight: 100;
 }
 
 .logo-white {
@@ -197,9 +198,10 @@ div.first {
 }
 
 .citation.home {
-  color: #97D4C8;
-  bottom: -10%;
-  margin: 150px 30px;
+  color: #97D4C8;  
+  bottom: 0px;
+  margin: 20px 77px;
+  position: relative;
 }
 
 .citation .text {
