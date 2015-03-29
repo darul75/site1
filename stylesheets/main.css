@@ -22,12 +22,12 @@
 
 h1 {
   font-size: 2rem;
-  margin: 50px 0;
+  margin: 20px 0;
 }
 
 p {
-  font-size: 1.2rem;
-  line-height: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.8rem;
 }
 
 .logo-white {
@@ -44,7 +44,7 @@ p {
 }
 
 .logo-home {
-  
+  cursor: pointer;  
 }
 
 .smart-object-parent {
@@ -184,7 +184,7 @@ div.first {
 .citation {  
   position: absolute;
   font-size: 4rem;  
-  top: 20%;  
+  bottom: 20%;  
   padding: 20px 30px;
   font-size: 1.3rem;
   line-height: 2rem;
@@ -192,6 +192,7 @@ div.first {
 
 .citation.home {
   color: #97D4C8;
+  bottom: -10%;
   margin: 150px 30px;
 }
 
