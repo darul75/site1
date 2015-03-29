@@ -188,6 +188,19 @@ div.first {
   margin-top: 20px;
 }
 
+@media (max-height: 700px) {
+  .chapter-img {
+    height: 100px;
+  }
+}
+
+/*div.who {
+  width: 46px;
+  height: 44px;
+  background: url('../images/berlin-6.jpg') 0 0;
+
+}*/
+
 .citation {  
   position: relative;
   font-size: 4rem;  
