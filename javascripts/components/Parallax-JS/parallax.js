@@ -48,6 +48,11 @@ $(function(){
 	    $(this).siblings(hideArrow ? '.arrow-right' : '.arrow-left').show();
 		 });
 
+		$('.header_menu .navigation .menu-toggle').click(
+    function(){
+      $('.header_menu .navigation .menu-nav').toggleClass('toggled');
+  });
+
 			var elt = $(section).find('.layout-content .fa');
 
 			elt.on('mouseenter', function() {

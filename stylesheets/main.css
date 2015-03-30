@@ -1,26 +1,7 @@
 @CHARSET "ISO-8859-1";
-
-.header_menu {
-  /*float: left;*/
-  position: relative;
-  background-color: #FFF;    
-  display: none;
-  visibility: hidden;
-  width: 1000px;
-  height: 80px;
-  z-index: 2;
-}
-
-.footer {
-  bottom: 0px;
-  position: absolute;
-  text-align: center;
-  width: 1000px;
-  color: #fff;
-  background-color: #0F0261;
-}
-
-h1 {
+/* Common
+ * --------------------------------------- */
+ h1 {
   font-size: 1.5rem;
   margin: 20px 0;
 }
@@ -31,147 +12,28 @@ p {
   font-weight: 100;
 }
 
-.logo-white {
-  width: 100%;
-  height: 50%;
-  overflow: auto;
-  margin: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  text-align: center;
-  overflow: visible;
-}
-
-.logo-home {
-  cursor: pointer;  
-}
-
-.smart-object-parent {
-  width: 46px; height: 46px; border-radius: 23px; position: absolute; background-color: rgb(56, 56, 60);
-}
-
-.smart-object-parent:hover {
-  background-color: #FFF;  
-  border-radius: 50%;
-  transition: all 2s;
-}
-
-.smart-object-parent:hover .smart-object {
-    height: 30px;
-    display: block;
-}
-
-#menu li {
-  display: inline-block;
-  padding: 8px 0px;
-  margin: 0px 10px;  
-}
-#menu li.active{  
-  color: #0F3FAA;
-}
-#menu li a{
-  text-decoration: none;
-  color: #0C2D8C;
-  font-size: 1.2rem;
-}
-#menu li.active a:hover{
-  text-decoration: underline;
-  color: #eee;
-}
-#menu li:hover{
-  /*background: rgba(255,255,255, 0.8);*/
-}
-#menu li a,
-#menu li.active a{
-  padding: 9px 8px;
-  display:block;
-}
-#menu li.active a{
-  color: #184ec6;
-}
-
-.header_menu .menu-toggle {
-  position: absolute;
-  top: 25px;
-  right: 19px;
-  margin: 0;
-  width: 40px;
-  height: 40px;
-  background: transparent url("../images/sprites.png") -176px 4px no-repeat;
-  cursor: pointer;
-}
-
-.layout {  
+/* Layout
+ * --------------------------------------- */
+ .layout {  
   width: 100%;
   height: 100%;
-  /*background-color: #1A3D84;
-  opacity: 0.7;     */
 }
 
 .layout-content {
   height: 100%;
 }
 
-.layout-home {  
-  /*width: 1000px;
-  height: 100%;
-  background-color: #1A3D84;
-  opacity: 0.7;     */
-}
-
-.rectangle {
-  width: 60px;
-  height: 60px;  
-}
-
-.color-1 { background-color: #0C2D8C; }
-.color-2 { background-color: #061B6A; }
-.color-3 { background-color: #0C2D8C; }
-.color-4 { background-color: #0F3FAA; }
-.color-5 { background-color: #0C2D8C; }
-
-.white-rect-above {
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  background-color: #FFF;
-  top: 80px;
-}
-
-.fake-lamp {
-  cursor: pointer;
-  width: 60px;
-  height: 80px;  
-  margin: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  text-align: center;
-  overflow: visible;
-}
-
-section .story {
+/* Section / Chapter
+ * --------------------------------------- */
+section div.story {
   background-color: rgba(26, 61, 132, 0.7);
 }
 
-section .story.home {
+section div.story.home {
   background: none;
 }
 
-div.first {
-  background: url('../images/berlin-2.jpg')
-}
-
-.pattern-blue {
-  background-color: rgba(26, 61, 132, 0.7);
-}
-
-.chapter {
+section div.chapter {
   position: relative;  
   height: 100%;
   opacity: 1.0;
@@ -179,39 +41,27 @@ div.first {
   width: 1000px;
 }
 
-.chapter-white {  
+section div.chapter-white {  
   background-color: #FFF;
   height: 82%;  
 }
 
-.home {
-  background: none;
-}
-
-.chapter.home {
+section div.chapter.home {
   background-color: rgba(26, 61, 132, 0.7);
 }
 
-.chapter-content {
+section div.chapter-content {
   margin: 20px;
 }
 
-.chapter-img {
+section div.chapter-img {
   width: 100%;
   height: 250px;  
 }
 
-
-
-div.chapter-illustration {
-  margin-top: 10px;
+section div.home {
+  background: none;
 }
-
-div.who { background: url('../images/berlin-6.jpg') 1199px 1720px; }
-div.apports { background: url('../images/berlin-7.jpg') 1199px 1720px; }
-div.expertise { background: url('../images/berlin-3.jpg') 1199px 1720px; }
-div.interventions { background: url('../images/berlin-4.jpg') 1199px 1720px; }
-
 
 .citation {  
   position: relative;
@@ -236,6 +86,161 @@ div.interventions { background: url('../images/berlin-4.jpg') 1199px 1720px; }
   line-height: 2.5rem;
   font-weight: 100;
 }
+
+/* Menu
+ * --------------------------------------- */
+
+div.header_menu {
+  position: relative;
+  background-color: #FFF;    
+  display: none;
+  visibility: hidden;
+  width: 1000px;
+  height: 80px;
+  z-index: 2;
+}
+
+div.header_menu h3.menu-toggle {
+  position: absolute;
+  top: 25px;
+  right: 19px;
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  background: transparent url("../images/sprites.png") -176px 4px no-repeat;
+  cursor: pointer;
+}
+
+ul.menu li {
+  display: inline-block;
+  padding: 8px 0px;
+  margin: 0px 10px;  
+}
+
+.navigation {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 13px;
+  width: 240px;
+  z-index: 999;
+}
+
+div.menu-nav {
+  border-radius: 2px;
+  position: relative;
+  display: none;
+  margin-top: 90px;
+  padding: 16px 24px;
+  margin-right: 7px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+div.menu-nav.toggled {
+  display: block;
+}
+
+div.menu-nav:after {
+  position: absolute;
+  top: -10px;
+  right: 6px;
+  border-bottom: 10px solid rgba( 255, 255, 255, .9 );
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  content: '';
+}
+
+div.menu-nav ul {
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-left: 2px solid #808285;
+}
+
+div.menu-nav > ul > li > a {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: none;
+}
+
+div.menu-nav a:visited {
+  color: #808285;
+}
+
+div.menu-nav a:hover {
+  color: #808285;
+}
+
+.footer {
+  bottom: 0px;
+  position: absolute;
+  text-align: center;
+  width: 1000px;
+  color: #fff;
+  background-color: #0F0261;
+}
+
+/* Logo
+ * --------------------------------------- */
+
+.logo-white {
+  width: 100%;
+  height: 50%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  overflow: visible;
+}
+
+.logo-home {
+  cursor: pointer;  
+}
+
+.fake-lamp {
+  cursor: pointer;
+  width: 60px;
+  height: 80px;  
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  overflow: visible;
+}
+
+.white-rect-above {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-color: #FFF;
+  top: 80px;
+}
+
+.rectangle {
+  width: 60px;
+  height: 60px;  
+}
+
+.color-1 { background-color: #0C2D8C; }
+.color-2 { background-color: #061B6A; }
+.color-3 { background-color: #0C2D8C; }
+.color-4 { background-color: #0F3FAA; }
+.color-5 { background-color: #0C2D8C; }
+
+div.who { background: url('../images/berlin-6.jpg') 1199px 1720px; }
+div.apports { background: url('../images/berlin-7.jpg') 1199px 1720px; }
+div.expertise { background: url('../images/berlin-3.jpg') 1199px 1720px; }
+div.interventions { background: url('../images/berlin-4.jpg') 1199px 1720px; }
 
 @media (max-height: 700px) {
   .chapter-img {
@@ -265,6 +270,52 @@ div.interventions { background: url('../images/berlin-4.jpg') 1199px 1720px; }
   }
 
 }
+
+@media (max-width : 480px){
+
+  body {
+    min-width: 100%;
+  }
+
+  p {
+    font-size: 13px;
+    line-height: 1.2rem;
+    font-weight: normal;
+  }
+
+  div.header_menu {
+    width: 100%;
+  }
+
+  .logo-home {
+    height: 100px;
+  }
+
+  section div.chapter {  
+    width: 100%;
+  }
+
+  section div.chapter-white {
+    height: 100%;
+  }
+
+  img.bg, div.arrow, section div.chapter-img { 
+    display: none;
+    width: 0px;
+  }  
+
+  section div.chapter-content span {
+    display: none;
+  }
+
+  .citation.home {
+    margin: 40px 0px;
+  }
+
+
+}
+
+
 
 /*HIDE/SHOW PART ARROW*/
 .arrow-left {

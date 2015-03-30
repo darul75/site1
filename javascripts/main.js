@@ -30,6 +30,11 @@ $(document).ready(function() {
       scrollToSection( $( this ).attr( 'href' ).substr( 1 ) );
   });
 
+  $('.header_menu .navigation .menu-toggle').click(
+    function(){
+      $('.header_menu .navigation .menu-nav').toggleClass('toggled');
+  });
+
   var cssSlide = 'slideOutLeft';
   var cssSlideBack = 'slideOutLeftBack';
 

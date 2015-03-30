@@ -8,11 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- http://designshack.net/articles/css/10-great-google-font-combinations-you-can-copy/  -->
     <link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet" type="text/css">
-    <!-- <link rel="stylesheet" type="text/css" href="javascripts/components/fullpage.js/jquery.fullPage.css" />
-    <link rel="stylesheet" type="text/css" href="javascripts/components/ihover/src/ihover.min.css" />    
-    <link rel="stylesheet" href="stylesheets/flexiblegs.css">-->    
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet" type="text/css">    
+    <!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
     <link rel="stylesheet" type="text/css" href="javascripts/components/animate.css/animate.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/grid.css" />
     <link rel="stylesheet" type="text/css" href="javascripts/components/Parallax-JS/css/reset.css"/>
@@ -33,18 +30,29 @@
   <body>
 
     <!-- HEADER -->
-    <div class="outer header_menu">
+    <div class="header_menu">
       <div class="white-rect-above"></div>
       <header class="inner">
-        <ul id="menu">
+        <ul class="menu">
           <li data-menuanchor="accueil"><a href="#accueil"><img src="images/logo-blue.svg" height="60px" /></a></li>
           <!-- <li data-menuanchor="qui-sommes-nous" class="active animated"><a href="#qui-sommes-nous">Qui sommes nous</a></li>
           <li data-menuanchor="apports"><a href="#apports">Apports</a></li>
           <li data-menuanchor="domaines-expertise"><a href="#domaines-expertise">Domaines d'expertise</a></li>
           <li data-menuanchor="interventions"><a href="#interventions">Interventions</a></li>
           <li data-menuanchor="contacts"><a href="#contacts">Contacts</a></li> -->          
-        </ul>            
-        <h3 class="menu-toggle">
+        </ul>
+        <nav class="navigation" role="navigation">            
+          <h3 class="menu-toggle"></h3>
+          <div class="menu-nav">
+            <ul id="menu-menu-principal" class="menu">
+              <li><a href="#qui_sommes_nous">Qui sommes nous</a></li>
+              <li><a href="#apports">Apports</a></li>
+              <li><a href="#domaines_expertise">Domaines d'expertise</a></li>
+              <li><a href="#interventions">Interventions</a></li>
+              <li><a href="#contacts">Contacts</a></li>
+            </ul>            
+          </div>
+        </nav>
       </header>
     </div>
 
@@ -60,9 +68,9 @@
             <div class="chapter home">       
               <div class="logo-white">
                 <div>
-                  <a href="#qui-sommes-nous">
-                  <img src="images/logo-blanc.svg" height="200px" class="logo-home animated bounce" onclick="scrollB('qui-sommes-nous')"/>
-                </a>
+                  <a href="#qui_sommes_nous">
+                  <img src="images/logo-blanc.svg" height="200px" class="logo-home animated bounce" onclick="scrollB('qui_sommes_nous')"/>
+                  </a>
                 </div>
                 <div class="citation home">
                 <div class="text">« Il est impossible d'enseigner quelquechose à quelqu'un, vous ne pouvez l'aider qu'à le découvrir en lui »
@@ -86,7 +94,7 @@
     </section>    
 
     <!-- WHO ARE WE -->
-    <section id="story-qui-sommes-nous" anim-pause="1000" onFocus="notHome">      
+    <section id="story-qui_sommes_nous" anim-pause="1000" onFocus="notHome">      
       <img class="bg animate" src="images/berlin-6.jpg" anim-detached="true" />
       <div class="story">
         <div class="layout">
@@ -126,7 +134,7 @@
     </section>
     <!-- APPORTS -->
     <section id="story-apports" anim-pause="1000" onFocus="notHome">      
-      <img class="bg" src="images/berlin-7.jpg" anim-detached="true" />
+      <img class="bg animate" src="images/berlin-7.jpg" anim-detached="true" />
       <div class="story">
         <div class="layout">
           <div class="layout-content">
@@ -162,8 +170,8 @@
       </div>
     </section>
     <!-- DOMAINES EXPERTISES -->
-    <section id="story-expertise" anim-pause="1000" onFocus="notHome">      
-      <img class="bg" src="images/berlin-3.jpg" anim-detached="true" />
+    <section id="story-domaines_expertise" anim-pause="1000" onFocus="notHome">      
+      <img class="bg animate" src="images/berlin-3.jpg" anim-detached="true" />
       <div class="story">
         <div class="layout">
           <div class="layout-content">
@@ -248,7 +256,7 @@
     </section>
     <!-- INTERVENTIONS -->
     <section id="story-interventions" anim-pause="1000" onFocus="notHome">      
-      <img class="bg" src="images/berlin-4.jpg"  />
+      <img class="bg animate" src="images/berlin-4.jpg"  />
       <div class="story">
         <div class="layout">
           <div class="layout-content">
