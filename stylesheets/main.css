@@ -253,7 +253,7 @@ div.expertise { background: url('../images/berlin-3.jpg') 1199px 1720px; }
 div.interventions { background: url('../images/berlin-4.jpg') 1199px 1720px; }
 
 @media (max-height: 700px) {
-  .chapter-img {
+  section div.chapter-img {
     height: 100px;
   }
 
@@ -271,6 +271,7 @@ div.interventions { background: url('../images/berlin-4.jpg') 1199px 1720px; }
     padding: 0px 30px;
     font-size: 1.3rem;
     line-height: 2rem;
+    margin-top: 40%;
   }
 
   .citation .text {
