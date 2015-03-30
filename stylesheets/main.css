@@ -142,11 +142,9 @@ p {
 }
 
 .fake-lamp {
+  cursor: pointer;
   width: 60px;
-  height: 60px;    
-  width: 50px;
-  height: 50%;
-  overflow: auto;
+  height: 80px;  
   margin: auto;
   position: absolute;
   top: 0;
