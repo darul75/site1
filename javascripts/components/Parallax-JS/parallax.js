@@ -51,11 +51,11 @@ $(function(){
 			var elt = $(section).find('.layout-content .fa');
 
 			elt.on('mouseenter', function() {
-		  	$(this).parent().parent().parent().css('background', 'none');
+		  	$(this).parent().parent().parent().parent().css('background', 'none');
 			});
 
 			elt.mouseout(function() {
-				$(this).parent().parent().parent().css('background-color', 'rgba(26, 61, 132, 0.7)');		  	
+				$(this).parent().parent().parent().parent().css('background-color', 'rgba(26, 61, 132, 0.7)');		  	
 			});
 	}  
 
