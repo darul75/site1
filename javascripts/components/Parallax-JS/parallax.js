@@ -31,22 +31,32 @@ $(function(){
   		var cssSlideBack = 'slideOutLeftBack';
 
 		$(section).find('.layout-content .arrow').click(function() {
-		    var hideArrow = $(this).hasClass('arrow-left');
-		    var parent = $(this).parent().parent().parent();
-		    var slided = parent.data("slided") || false;
+	    var hideArrow = $(this).hasClass('arrow-left');
+	    var parent = $(this).parent().parent().parent();
+	    var slided = parent.data("slided") || false;
 
-		    if (!slided) {
-		      parent.addClass(cssSlide);
-		      parent.removeClass(cssSlideBack);
-		    }
-		    else {
-		      parent.removeClass(cssSlide);
-		      parent.addClass(cssSlideBack);
-		    }
-		    parent.data("slided", !slided)
-		    $(this).hide();
-		    $(this).siblings(hideArrow ? '.arrow-right' : '.arrow-left').show();
-		  });
+	    if (!slided) {
+	      parent.addClass(cssSlide);
+	      parent.removeClass(cssSlideBack);
+	    }
+	    else {
+	      parent.removeClass(cssSlide);
+	      parent.addClass(cssSlideBack);
+	    }
+	    parent.data("slided", !slided)
+	    $(this).hide();
+	    $(this).siblings(hideArrow ? '.arrow-right' : '.arrow-left').show();
+		 });
+
+			var elt = $(section).find('.layout-content .fake-lamp');
+
+			elt.on('mouseenter', function() {
+		  	$(this).parent().parent().parent().css('background', 'none');
+			});
+
+			elt.mouseout(function() {
+				$(this).parent().parent().parent().css('background-color', 'rgba(26, 61, 132, 0.7)');		  	
+			});
 	}  
 
 	// find all animatable nodes and store properties

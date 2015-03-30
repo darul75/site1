@@ -141,6 +141,22 @@ p {
   top: 80px;
 }
 
+.fake-lamp {
+  width: 60px;
+  height: 60px;    
+  width: 50px;
+  height: 50%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  overflow: visible;
+}
+
 section .story {
   background-color: rgba(26, 61, 132, 0.7);
 }
@@ -264,6 +280,7 @@ div.interventions { background: url('../images/berlin-4.jpg') 1199px 1720px; }
   position: absolute;
   right: 0px;
   bottom: 300px;
+  z-index: 5;
 }
 
 .arrow-right {
@@ -279,4 +296,5 @@ div.interventions { background: url('../images/berlin-4.jpg') 1199px 1720px; }
   position: absolute;
   right: -28px;
   bottom: 300px;
+  z-index: 5;
 }
