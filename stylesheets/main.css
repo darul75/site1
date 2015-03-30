@@ -255,15 +255,15 @@ div.interventions { background: url('../images/berlin-4.jpg') 1199px 1720px; }
 /*HIDE/SHOW PART ARROW*/
 .arrow-left {
   cursor: pointer;
-  float: right;
-  margin: 0 auto;  
+  float: right;  
   height: 0;
   border-top: 50px solid transparent;
   border-bottom: 50px solid transparent;
-  border-right: 50px solid rgb(67, 67, 70); 
-  width: 0;
-  top: 100px;
-  position: relative;
+  border-right: 50px solid rgb(67, 67, 70);
+  width: 0;  
+  position: absolute;
+  right: 0px;
+  bottom: 300px;
 }
 
 .arrow-right {
@@ -274,10 +274,9 @@ div.interventions { background: url('../images/berlin-4.jpg') 1199px 1720px; }
   border-top: 50px solid transparent;
   border-bottom: 50px solid transparent;
   border-left: 50px solid rgb(67, 67, 70);
-  width: 0;
-  left: 50px;
-  position: relative;
+  width: 0;  
   display:none;
-  top: 100px;
-  position: relative;
+  position: absolute;
+  right: -28px;
+  bottom: 300px;
 }

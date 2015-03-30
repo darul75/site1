@@ -400,13 +400,7 @@ $(function(){
 				}
 			}else{
 				if( oData.bVisible ){
-					$sec.detach();
-					if (i == 0) {
-						headerShow(false)
-					}
-					else {
-						headerShow(true)	
-					}
+					$sec.detach();					
 					oData.bVisible = false;
 				}
 			}
