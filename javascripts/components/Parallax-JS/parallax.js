@@ -27,6 +27,10 @@ $(function(){
 		header.show();
 		header.css('visibility', 'visible');
 
+		var title = $(section).find('h1')[0].innerHTML;
+		$($(section).find('h1')).detach();
+		$($(header).find('.title')[0]).html(title);
+
 		var cssSlide = 'slideOutLeft';
   		var cssSlideBack = 'slideOutLeftBack';
 

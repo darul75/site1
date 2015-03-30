@@ -34,13 +34,13 @@
       <div class="white-rect-above"></div>
       <header class="inner">
         <ul class="menu">
-          <li data-menuanchor="accueil"><a href="#accueil"><img src="images/logo-blue.svg" height="60px" /></a></li>
-          <!-- <li data-menuanchor="qui-sommes-nous" class="active animated"><a href="#qui-sommes-nous">Qui sommes nous</a></li>
-          <li data-menuanchor="apports"><a href="#apports">Apports</a></li>
-          <li data-menuanchor="domaines-expertise"><a href="#domaines-expertise">Domaines d'expertise</a></li>
-          <li data-menuanchor="interventions"><a href="#interventions">Interventions</a></li>
-          <li data-menuanchor="contacts"><a href="#contacts">Contacts</a></li> -->          
+          <li>
+            <a href="#" on-click="scrollB('accueil')" style="width:110px; height: 60px;">
+              <!-- <img src="images/logo-blue.svg" height="60px" /> -->
+            </a>
+          </li>                            
         </ul>
+        <span class="title"></span>
         <nav class="navigation" role="navigation">            
           <h3 class="menu-toggle"></h3>
           <div class="menu-nav">
@@ -94,7 +94,7 @@
     </section>    
 
     <!-- WHO ARE WE -->
-    <section id="story-qui_sommes_nous" anim-pause="1000" onFocus="notHome">      
+    <section id="story-qui_sommes_nous" anim-pause="1000" onFocus="notHome">
       <img class="bg animate" src="images/berlin-6.jpg" anim-detached="true" />
       <div class="story">
         <div class="layout">
