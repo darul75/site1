@@ -48,7 +48,7 @@ $(function(){
 	    $(this).siblings(hideArrow ? '.arrow-right' : '.arrow-left').show();
 		 });
 
-			var elt = $(section).find('.layout-content .fake-lamp');
+			var elt = $(section).find('.layout-content .fa');
 
 			elt.on('mouseenter', function() {
 		  	$(this).parent().parent().parent().css('background', 'none');
