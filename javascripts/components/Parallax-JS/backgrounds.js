@@ -13,8 +13,8 @@ $(function(){
 			$section.appendTo( $content );
 
 			if( !oData.width ){
-				oData.width  = $item.width();
-				oData.height = $item.height();
+				oData.width  = $item.width() != 0 ? $item.width() : $(document).width();
+				oData.height = $item.height() != 0 ? $item.width() : $(document).height();
 			}
 
 			fRW = $section.width()  / oData.width;

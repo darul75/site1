@@ -42,6 +42,7 @@ p {
   bottom: 0;
   right: 0;
   text-align: center;
+  overflow: visible;
 }
 
 .logo-home {
