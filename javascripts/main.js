@@ -15,6 +15,14 @@ function notHome(section) {
   console.log(section);
 }
 
+var preload = new createjs.LoadQueue();
+preload.addEventListener("fileload", handleFileComplete);
+preload.loadFile('http://darul75.github.io/site1/images/berlin-home.jpg');
+preload.loadFile('http://darul75.github.io/site1/images/berlin-6.jpg');
+function handleFileComplete(event) {
+  $window.trigger( 'post-resize-anim' );
+}
+
 $(document).ready(function() {  
 
   $('.header_menu ul li').on( 'click', 'a', 
