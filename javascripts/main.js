@@ -15,6 +15,10 @@ function notHome(section) {
   console.log(section);
 }
 
+function undoAnimationClasses() {
+  console.log('undo');
+}
+
 var preload = new createjs.LoadQueue();
 preload.addEventListener("fileload", handleFileComplete);
 preload.loadFile('http://darul75.github.io/site1/images/berlin-home.jpg');

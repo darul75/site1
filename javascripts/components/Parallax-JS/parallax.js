@@ -17,11 +17,11 @@ $(function(){
 	  ;
 
 	function headerShow(section, index) {
-		var header = $('.header_menu').clone();
+		var header = $('.header_menu').clone();				
 
 		header.find('li').on( 'click', 'a', function(){
 	    	scrollToSection( $( this ).attr( 'href' ).substr( 1 ) );
-	   	});	   	
+	   	});	 
 
 		$($(section).find('.layout-content')[0]).prepend(header);		
 		header.show();
@@ -32,7 +32,7 @@ $(function(){
 		$($(header).find('.title')[0]).html(title);
 
 		var cssSlide = 'slideOutLeft';
-  		var cssSlideBack = 'slideOutLeftBack';
+		var cssSlideBack = 'slideOutLeftBack';
 
 		$(section).find('.layout-content .arrow').click(function() {
 	    var hideArrow = $(this).hasClass('arrow-left');
@@ -52,20 +52,19 @@ $(function(){
 	    $(this).siblings(hideArrow ? '.arrow-right' : '.arrow-left').show();
 		 });
 
-		$('.header_menu .navigation .menu-toggle').click(
-    function(){
-      $('.header_menu .navigation .menu-nav').toggleClass('toggled');
-  });
+		$( '.header_menu .navigation .menu-toggle' ).click(function(){
+    	$( '.header_menu .navigation .menu-nav' ).toggleClass('toggled');
+  	});
 
-			var elt = $(section).find('.layout-content .fa');
+		var elt = $(section).find( '.layout-content .fa' );
 
-			elt.on('mouseenter', function() {
-		  	$(this).parent().parent().parent().parent().css('background', 'none');
-			});
+		elt.on( 'mouseenter' , function() {
+	  	$(this).parent().parent().parent().parent().css('background', 'none');
+		});
 
-			elt.mouseout(function() {
-				$(this).parent().parent().parent().parent().css('background-color', 'rgba(26, 61, 132, 0.7)');		  	
-			});
+		elt.mouseout(function() {
+			$(this).parent().parent().parent().parent().css('background-color', 'rgba(26, 61, 132, 0.7)');		  	
+		});
 	}  
 
 	// find all animatable nodes and store properties
@@ -92,7 +91,7 @@ $(function(){
 
 		// remove the section from the DOM
 		$sec.detach();
-	} );
+	});
 
 	// converts a unit string to px
 	function parseUnit( vVal, $node, sValFn ){
@@ -413,13 +412,28 @@ $(function(){
 				if( !bChangedLoc ){
 					if( sLastHash != ( sSecId = $sec.attr( 'id' ).split( '-' ).pop() ) ){
 						location.replace( '#' + ( sLastHash = sSecId ) );
+						// var animateds = $('.chapter.animated');
+						// for (var i=0;i<animateds.length;i++) {
+						// 	var chap = $(animateds[i]);
+						// 	if (chap.hasClass('slideOutLeft')) {
+						// 		chap.addClass('slideOutLeftBack');
+						// 		chap.removeClass('slideOutLeft');
+						// 		chap.removeClass('slideOutLeftBack');
+						// 	}
+							
+						// 	chap.data("slided", false);
+						// }
+
+						// $('.arrow-right').hide();
+						// $('.arrow-left').show();
+
 						$body.prop( 'class', $body.prop( 'class' ).replace( /(?: |^)section-[^ ]+/g, '' ) ).addClass( 'section-' + sSecId );
 					}
 					bChangedLoc = true;
 				}
 			}else{
 				if( oData.bVisible ){
-					$sec.detach();					
+					$sec.detach();									
 					oData.bVisible = false;
 				}
 			}
