@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="javascripts/components/animate.css/animate.css">            
     <link rel="stylesheet" type="text/css" href="stylesheets/grid.css" />
     <link rel="stylesheet" type="text/css" href="stylesheets/main-v2.css" />
+    <link rel="stylesheet" type="text/css" href="javascripts/components/ihover/src/ihover.min.css" />
+    
     <script type="text/javascript" src="javascripts/components/jquery/dist/jquery.min.js"></script>    
     <script type="text/javascript" src="javascripts/components/Parallax-ImageScroll/jquery.imageScroll.js"></script>
     <!--<script type="text/javascript" src="javascripts/main.js"></script>-->
@@ -114,7 +116,7 @@
       </div>   
     </section>
   
-    <div class="img-holder" data-image="images/berlin-6.jpg" data-image-mobile="https://raw.github.com/pederan/ImageScroll/master/demo/img/japan_digital_nature-800x500.jpg" data-width="1680" data-height="1050"></div>
+    <div class="img-holder" data-image="images/berlin-6.jpg" data-cover-ratio="0.4" data-image-mobile="https://raw.github.com/pederan/ImageScroll/master/demo/img/japan_digital_nature-800x500.jpg" data-width="1680" data-height="1050"></div>
   
     <!-- APPORTS -->
     <section id="apports">
@@ -160,7 +162,7 @@
       </div> 
     </section>
   
-    <div class="img-holder" data-image="images/berlin-3.jpg" data-image-mobile="https://raw.github.com/pederan/ImageScroll/master/demo/img/german_landscapes-800x450.jpg"></div>
+    <div class="img-holder" data-image="images/berlin-3.jpg" data-cover-ratio="0.4" data-image-mobile="https://raw.github.com/pederan/ImageScroll/master/demo/img/german_landscapes-800x450.jpg"></div>
   
     <!-- EXPERTISE -->
     <section>
@@ -251,7 +253,7 @@
       </div>
     </section>
 
-    <div class="img-holder" data-image="images/berlin-3.jpg" data-image-mobile="https://raw.github.com/pederan/ImageScroll/master/demo/img/german_landscapes-800x450.jpg"></div>
+    <div class="img-holder" data-image="images/berlin-3.jpg" data-cover-ratio="0.4" data-image-mobile="https://raw.github.com/pederan/ImageScroll/master/demo/img/german_landscapes-800x450.jpg"></div>
 
     <!-- INTERVENTIONS -->
     <section>
@@ -297,13 +299,65 @@
       </div>
     </section>
 
+    <div class="img-holder" data-image="images/berlin-3.jpg" data-cover-ratio="0.2" data-image-mobile="https://raw.github.com/pederan/ImageScroll/master/demo/img/german_landscapes-800x450.jpg" ></div>
+
+    <!-- CONTACT -->
+    <section>
+      <div class="story home">
+        <div class="layout">
+          <div class="layout-content">            
+            <div class="chapter home">
+              <div class="story">
+                <div class="layout">
+                  <div class="layout-content">                  
+                    <div class="chapter animated">
+                      <div class="chapter-white">                                      
+                        <div class="chapter-content">
+                          <div class="grid">
+                            <div class="grid__col grid__col--1-of-2">
+                              <h1>Contacts</h1>                        
+                              <div class="ih-item circle effect2 left_to_right">
+                                <a href="#">
+                                  <div class="img">
+                                    <img src="images/email.jpg" alt="img">
+                                  </div>
+                                  <div class="info">
+                                    <h3>Contactez nous</h3>
+                                    <p>Recrutement, informations</p>
+                                  </div>
+                                </a>                                
+                              </div>                                            
+                            </div>
+                            <div class="grid__col grid__col--1-of-2">
+                              <div class="citation">
+                                <div class="text">
+                                  <a href="mailto:recrut@apis-lazuli-consulting.com">recrut@apis-lazuli-consulting.com</a> 
+                                </div>                                
+                              </div>
+                            </div>
+                          </div>  
+                        </div>
+                      </div>  
+                    </div>              
+                  </div>
+                </div> 
+              </div>
+
+            </div>
+          </div>
+        </div>        
+      </div>
+    </section>
+
+    
+
     <script>
         $('.img-holder').imageScroll({
 //            image: null,
 //              imageAttribute: 'image',
               container: $('body'),
               windowObject: $(window),
-//            speed:.2,
+              speed:.2,
 //            coverRatio:.75,
 //            coverRatio:1,
 //              holderClass: 'img-holder',
