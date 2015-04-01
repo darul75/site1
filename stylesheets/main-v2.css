@@ -123,17 +123,17 @@ div.menu-nav a:hover {
 }
 
 
-.citation {  
-  position: relative;
-  font-size: 4rem;      
+.citation {
+  font-family: "Open Sans";  
+  position: relative;  
   margin-top: 15%;
   padding: 20px 30px;
-  font-size: 1.3rem;
+  font-size: 1rem;
   line-height: 2rem;
 }
 
 .citation.home {
-  color: #EFF7F5;
+  color: #97D4C8;
   bottom: 0px;
   margin: 0px 200px;
   border-radius: 30px;
@@ -143,9 +143,9 @@ div.menu-nav a:hover {
 }
 
 .citation .text {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   text-align: left;
-  line-height: 2.5rem;
+  line-height: 1.8rem;
   font-weight: 100;
 }
 
