@@ -2,18 +2,18 @@
 
 body {
   margin: 0;
+  font-family: "Open Sans",Helvetica,Arial,sans-serif;
 }
 
- h1 {
-  font-family: "Open Sans";
+ h1 {  
   font-size: 1.5rem;
   margin: 20px 0;
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 16px;
   line-height: 1.6rem;
-  font-weight: 100;
+  font-weight: 50;  
 }
 
 ul.menu li {
@@ -184,3 +184,12 @@ div.menu-nav a:hover {
 .color-3 { background-color: #0C2D8C; }
 .color-4 { background-color: #0F3FAA; }
 .color-5 { background-color: #0C2D8C; }
+
+.grid__col--4-of-5 {
+  cursor: pointer;
+  /* width: 60px; */
+  height: 71px;
+  margin-top: auto;
+  position: relative;
+  top: 0;
+}
