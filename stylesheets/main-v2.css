@@ -193,3 +193,9 @@ div.menu-nav a:hover {
   position: relative;
   top: 0;
 }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
+  .logo-white{
+    height: 528px;
+  }
+}

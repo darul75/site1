@@ -337,12 +337,6 @@ div.interventions { background: url('../images/berlin-4.jpg') 1199px 1720px; }
 
 }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
-  .logo-white{
-    height: 528px;
-  }
-}
-
 /*HIDE/SHOW PART ARROW*/
 .arrow-left {
   cursor: pointer;
