@@ -15,7 +15,8 @@
     "scrollReveal.js": "~2.1.0",
     "ihover": "~1.0.0",
     "animate.css": "~3.2.3",
-    "PreloadJS": "~0.6.0"
+    "PreloadJS": "~0.6.0",
+    "Parallax-ImageScroll": "~0.2.0"
   },
   "authors": [
     "darul <darul75@gmail.com>"
