@@ -31,6 +31,10 @@ section div.chapter-content {
   margin: 20px;
 }
 
+p.expertise {
+
+}
+
 /* Menu
  * --------------------------------------- */
 
@@ -126,7 +130,7 @@ div.menu-nav a:hover {
 .citation {
   font-family: "Open Sans";  
   position: relative;  
-  margin-top: 15%;
+  margin-top: 30%;
   padding: 20px 30px;
   font-size: 1rem;
   line-height: 2rem;
@@ -175,8 +179,13 @@ div.menu-nav a:hover {
 }
 
 .rectangle {
-  width: 60px;
-  height: 60px;  
+  width: 10px;
+  height: 10px;
+  border-radius: 6px;
+  float: left;
+  top: 8px;
+  margin-right: 10px;
+  position: relative; 
 }
 
 .color-1 { background-color: #0C2D8C; }
