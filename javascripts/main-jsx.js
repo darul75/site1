@@ -102,7 +102,7 @@ var Menu = React.createClass({
 var MenuItem = React.createClass({
   onClick: function(evt) {
     scrollToAnchor(evt.target.hash.replace('#', ''));
-    evt.preventDefault();
+    //evt.preventDefault();
   },
   render: function() {    
     return (       
@@ -129,7 +129,7 @@ var ChapterList = React.createClass({
       var chaptersNodes = this.props.data.map(function(section, index) {        
         if (section.chapter) {
           chapterMarkup = <div>
-          <Immersive immersive={section.immersive} citation={section.chapter.citation}></Immersive>;
+          <Immersive immersive={section.immersive} citation={section.chapter.citation}></Immersive>
           <Chapter chapter={section.chapter}></Chapter>
           
           </div>
@@ -214,9 +214,15 @@ var ChapterParagraph = React.createClass({
 });
 
 var Chapter = React.createClass({
-  render: function() {    
+  render: function() { 
+    var style;  
+    if (this.props.chapter.styleHeight) {
+      style = {
+        height: this.props.chapter.styleHeight + 'px !important'
+      };  
+    }   
     return (
-      <section id={this.props.chapter.path} name={this.props.chapter.path} style={this.props.chapter.style}>
+      <section id={this.props.chapter.path} name={this.props.chapter.path} style={style}>
         <div className="chapter-content">
           <h1>{this.props.chapter.title}</h1>
           <div className="grid">
