@@ -1,0 +1,253 @@
+@CHARSET "ISO-8859-1";
+
+body {
+  margin: 0;
+  font-family: "Open Sans",Helvetica,Arial,sans-serif;
+}
+
+ h1 {  
+  font-size: 1.5rem;
+  margin: 5px 0;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6rem;
+  font-weight: 50;  
+}
+
+p.expertise {
+  font-size: 18px;
+}
+
+ul.menu li {
+  display: inline-block;
+  padding: 8px 0px;
+  margin: 0px 10px;  
+}
+
+section {  
+  width: 100%;  
+  height: 600px;  
+}
+
+section div.chapter-content {    
+  width: 1000px;
+  padding-top: 100px;  
+  margin: auto;
+}
+
+#footer {
+  width: 100%;
+  height: 15px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  text-align: center;
+  margin: auto;  
+  font-size: 12px;
+  border-top: 1px solid #eee;  
+  padding: 8px 0px;  
+}
+
+/* Menu
+ * --------------------------------------- */
+
+div.header_menu {
+  position: fixed;  
+  width: 100%;
+  height: 80px;        
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: #FFF;
+  z-index: 2;
+}
+
+div.header_menu h3.menu-toggle {
+  position: absolute;
+  top: 25px;
+  right: 19px;
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  background: transparent url("../images/sprites.png") -176px 4px no-repeat;
+  cursor: pointer;
+}
+
+div.menu-toggle-alone {
+  float: right;
+  position: relative;
+  top: 25px;
+  right: 19px;
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  background: transparent url("../images/sprites.png") -176px 4px no-repeat;
+  cursor: pointer;
+}
+
+div.header_menu .title {
+  font-family:"Open Sans";
+  position: absolute;  
+  font-size: 2rem;    
+  margin: 10px 18px;
+  text-transform: uppercase;
+  width: 100%;    
+  bottom: 0;  
+}
+
+div.menu-nav {  
+  border-radius: 2px;    
+  padding: 16px 24px;
+  background: #fff;
+}
+
+div.menu-nav.toggled {
+  display: block;
+}
+
+div.menu-nav:after {
+  position: absolute;
+  top: -10px;
+  right: 6px;
+  border-bottom: 10px solid rgba( 255, 255, 255, .9 );
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  content: '';
+}
+
+div.menu-nav ul {
+  width: 1000px;
+  margin: auto;
+  font-family: 'Open Sans', Helvetica, sans-serif;  
+  list-style: none;
+}
+
+div.menu-nav ul li:nth-child(n+2) {
+  padding-left: 10px;
+  height: 7px;
+  bottom: 8px;
+  position: relative;
+}
+
+div.menu-nav ul li:nth-child(2) {
+  /* border-left: 2px solid #808285; */
+  padding-left: 10px;
+  height: 7px;
+  bottom: 8px;
+  position: relative;
+}
+
+div.menu-nav > ul > li:nth-child(n+1) > a {
+/*  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: none;*/
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000;
+  bottom: 5px;
+  position: relative;
+  text-decoration: none;
+}
+
+
+
+div.menu-nav a:visited {
+  color: #808285;
+}
+
+div.menu-nav a:hover {
+  color: #808285;
+}
+
+
+.citation {
+  position: absolute;
+  width: 100%;
+  height: 150px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  font-family: "Open Sans";      
+  font-size: 1rem;
+  color: #97D4C8;
+  line-height: 2rem;    
+  padding: 10px 0px;      
+  background-color: rgba(26, 61, 132, 0.7);
+}
+
+.citation .text {
+  font-size: 1.2rem;
+  text-align: left;
+  line-height: 1.8rem;
+  font-weight: 100;
+  width: 800px;
+  margin: auto;  
+}
+
+.citation .text .author{
+  font-size: 1rem;
+  text-align: left;  
+}
+
+/* Logo
+ * --------------------------------------- */
+
+.logo-white {
+  width: 1000px;
+  height: 300px;
+  overflow: auto;
+  position: absolute;  
+  margin: 0 auto;
+  top: 112px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  overflow: visible;
+  background-color: rgba(26, 61, 132, 0.7);
+}
+
+.logo-home {
+  cursor: pointer;
+  position: relative;
+  top: 50px;
+}
+
+.rectangle {
+  width: 10px;
+  height: 10px;
+  border-radius: 6px;
+  float: left;
+  top: 8px;
+  margin-right: 10px;
+  position: relative; 
+}
+
+.color-1 { background-color: #0C2D8C; }
+.color-2 { background-color: #061B6A; }
+.color-3 { background-color: #0C2D8C; }
+.color-4 { background-color: #0F3FAA; }
+.color-5 { background-color: #0C2D8C; }
+
+.grid__col--4-of-5 {
+  cursor: pointer;
+  /* width: 60px; */
+  height: 71px;
+  margin-top: auto;
+  position: relative;
+  top: 0;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
+  .logo-white{
+    height: 528px;
+  }
+}

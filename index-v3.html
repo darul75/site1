@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="test">   
+    <meta name="viewport" content="width=device-width">    
+    <link href="http://fonts.googleapis.com/css?family=Open Sans" rel="stylesheet" type="text/css">    
+    <link rel="stylesheet" type="text/css" href="javascripts/components/animate.css/animate.css">            
+    <link rel="stylesheet" type="text/css" href="stylesheets/grid.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/main-v3.css" />
+    <link rel="stylesheet" type="text/css" href="javascripts/components/ihover/src/ihover.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.0/JSXTransformer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
+    <script type="text/javascript" src="javascripts/components/jquery/dist/jquery.min.js"></script>    
+    <script type="text/javascript" src="javascripts/components/Parallax-ImageScroll/jquery.imageScroll.js"></script>    
+    
+    <title>Apis Lazuli Consulting</title>    
+  </head>
+  <body>    
+    <div id="content-apis"></div>
+
+    <div id="footer">
+      <footer>
+        <span><a>Mentions légales</a></span>
+        <span><a>Contact</a></span>        
+      </footer>
+    </div>
+
+    <script type="text/jsx;harmony=true" src="javascripts/main-jsx.js"></script>
+
+    <script>
+    function scrollToAnchor(aid){
+      var aTag = $("section[name='"+ aid +"']");
+      $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+    }
+    </script>    
+
+  </body>
+</html>
