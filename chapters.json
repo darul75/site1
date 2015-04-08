@@ -39,7 +39,8 @@
 	    	"title": "Leviers d’optimisation des ressources humaines",
 	    	"citation": {
 	    		"author" : "Galilée",
-	    		"text": "« Il est impossible d'enseigner quelquechose à quelqu'un, vous ne pouvez l'aider qu'à le découvrir en lui »"
+	    		"text": "« Il est impossible d'enseigner quelquechose à quelqu'un, vous ne pouvez l'aider qu'à le découvrir en lui »",
+	    		"class": "home"
 	    	},
 	    	"paragraphsCol1": [
 	    		"L’innovation modifie la relation au travail, chacun devient acteur et moteur.",

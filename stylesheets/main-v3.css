@@ -2,18 +2,23 @@
 
 body {
   margin: 0;
-  font-family: "Open Sans",Helvetica,Arial,sans-serif;
+  font-family: "Caecilia-Light", 'Helvetica Neue', Arial, Helvetica, sans-serif;  
 }
 
+/*font-family: "Open Sans",Helvetica,Arial,sans-serif;*/
+
  h1 {  
-  font-size: 1.5rem;
-  margin: 5px 0;
+  font-size: 1.5rem;  
+  font-family: "Open Sans";  
+  font-size: 1.4rem;  
+  text-transform: uppercase;
+  width: 100%;  
 }
 
 p {
-  font-size: 16px;
+  font-size: 1.2rem;
   line-height: 1.6rem;
-  font-weight: 50;  
+  font-weight: 100;  
 }
 
 p.expertise {
@@ -36,6 +41,32 @@ section div.chapter-content {
   padding-top: 100px;  
   margin: auto;
 }
+
+.imageHolder::after {
+  border-left: 20px solid #FFF;
+}
+
+/*.left-white {
+  position: absolute;
+  width: 5%;
+  height: 100%;
+  left: 0;  
+  background-color: #FFF;
+  border-bottom: 2px solid #fff;
+  border-top: 2px solid #fff;
+  z-index: 5;
+}
+
+.right-white {
+  position: absolute;
+  width: 5%;
+  height: 100%;
+  right: 0;  
+  background-color: #FFF;
+  border-bottom: 2px solid #fff;
+  border-top: 2px solid #fff;
+  z-index: 5;  
+}*/
 
 #footer {
   width: 100%;
@@ -148,7 +179,7 @@ div.menu-nav > ul > li:nth-child(n+1) > a {
   text-transform: uppercase;
   color: #000;
   text-decoration: none;*/
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 700;
   text-transform: uppercase;
   color: #000;
@@ -170,29 +201,36 @@ div.menu-nav a:hover {
 
 .citation {
   position: absolute;
-  width: 100%;
+  width: 40%;
   height: 10%;
+  /*border-radius: 15px;*/
   left: 0;
-  bottom: 0;
-  right: 0;
-  font-family: "Open Sans";      
+  bottom: 50%;
+  right: 0;  
   font-size: 1rem;
   color: #97D4C8;
-  line-height: 2rem;    
-  padding: 10px 0px;      
-  background-color: rgba(26, 61, 132, 0.7);
+  line-height: 2rem;
+  padding: 10px 0px;
+  padding: 30px;
+  margin: auto;
+  background-color: rgba(26, 61, 132, 0.9);
+}
+
+.citation.home {
+  bottom: 10%;
 }
 
 .citation .text {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   text-align: left;
   line-height: 1.8rem;
   font-weight: 100;
-  width: 800px;
-  margin: auto;  
+  /* width: 800px; */
+  margin: auto; 
 }
 
-.citation .text .author{
+.citation .text .author {
+  font-family: "Open Sans";
   font-size: 1rem;
   text-align: left;  
 }
@@ -201,25 +239,26 @@ div.menu-nav a:hover {
  * --------------------------------------- */
 
 .logo-white {
-  width: 95%;
-  height: 70%;
+  width: 471px;
+  height: 314px;
   overflow: auto;
   position: absolute;
   /* margin: auto; */
-  border-radius: 0 0 0 50px;
-  top: 112px;
-  /* left: 0; */
+  border-radius: 0px;
+  top: 180px;
+  left: 32px;
   bottom: 0;
   right: 0;
   text-align: center;
   overflow: visible;
-  background-color: rgba(26, 61, 132, 0.7);
+  background-color: rgba(26, 61, 132, 0.8);
 }
 
 .logo-home {
   cursor: pointer;
-  position: relative;
-  top: 50px;
+  position: absolute;
+  top: 20%;
+  left: 10%;
 }
 
 .rectangle {

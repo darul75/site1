@@ -21,7 +21,8 @@ var Page = React.createClass({
   },
   componentDidUpdate: function(prevProps, prevState) {
     $('.img-holder').imageScroll({
-      container: $('body'),
+      container: $('#content-apis'),
+      imgClass: 'img-holder-img',
       windowObject: $(window),
       mediaWidth: 1600,
       mediaHeight: 1200,
@@ -53,16 +54,17 @@ var Logo = React.createClass({
     evt.preventDefault();
   },
   render: function() {    
+    // <div onClick={this.onClick}>
+        //   <i className="fa fa-3x fa-lightbulb-o fa-inverse"></i>
+        // </div>
+
     return (       
       <div className="logo-white">
         <div onClick={this.onClick}>
           <a href="#qui_sommes_nous">
             <img src="images/logo-blanc.svg" height="200px" className="logo-home animated bounce" />
           </a>
-        </div>
-        <div onClick={this.onClick}>
-          <i className="fa fa-3x fa-lightbulb-o fa-inverse"></i>
-        </div>
+        </div>        
       </div>
     );
   }
@@ -76,9 +78,9 @@ var Menu = React.createClass({
   render: function() {   
     if (this.props.data) {  
       var menuItemMarkup = "";
-      var menusNodes = this.props.data.map(function(menu, index) {                
+      var menusNodes = this.props.data.map(function(menu, index) {                    
         return (
-          <MenuItem path={menu.path} text={menu.text} />          
+          <MenuItem key={menu.path} path={menu.path} text={menu.text} />          
         );
       });
     }
@@ -130,14 +132,14 @@ var ChapterList = React.createClass({
       var chapterMarkup = "";
       var immersiveMarkup = "";
       var chaptersNodes = this.props.data.map(function(section, index) {        
-        if (section.chapter) {
-          chapterMarkup = <div>
-          <Immersive immersive={section.immersive} citation={section.chapter.citation}></Immersive>
+        if (section.chapter) {          
+          chapterMarkup = <div key={section.chapter.path}>
+          <Immersive key={index} immersive={section.immersive} citation={section.chapter.citation}></Immersive>
           <Chapter chapter={section.chapter}></Chapter>
           
           </div>
         } else {
-          chapterMarkup = "";
+          chapterMarkup = <div key={section.immersive.img} />;
         }
 
         return (                      
@@ -153,20 +155,38 @@ var ChapterList = React.createClass({
 });
 
 var Immersive = React.createClass({
+  onMouseEnterHandler: function(e) {
+    
+
+  },
+  onMouseLeaveHandler: function(e) {
+    
+
+  },
   render: function() { 
-    var citationMarkup = ""
+    var citationMarkup = ""    
     if (this.props.citation) {
-      citationMarkup = <div className="citation">
-          <div className="text">{this.props.citation.text}
-            <div className="author">{this.props.citation.author}</div>
-          </div>          
-        </div>;
+      var citationClassname = "citation " + this.props.citation.class;
+      citationMarkup = 
+        <div onMouseEnter={this.onMouseEnterHandler} onMouseLeave={this.onMouseLeaveHandler}>
+          <div className={citationClassname}>
+            <div className="text">{this.props.citation.text}
+              <div className="author">{this.props.citation.author}</div>
+            </div>          
+          </div>        
+        </div>
     } else {
-      citationMarkup = "";
+      citationMarkup = 
+        <div>
+          <div className="left-white"/>        
+          <div className="right-white"/>
+        </div>
     }   
     return (      
-      <div className="img-holder" data-image={this.props.immersive.img} data-cover-ratio={this.props.immersive.ratio} 
-      data-width={this.props.immersive.w} data-height={this.props.immersive.h}>
+      <div  className="img-holder" 
+            data-image={this.props.immersive.img} 
+            data-cover-ratio={this.props.immersive.ratio} 
+            data-width={this.props.immersive.w} data-height={this.props.immersive.h}>
         {citationMarkup}
       </div>
     );
@@ -179,10 +199,11 @@ var ChapterParagraph = React.createClass({
     if (this.props.paragraphs) {
       paragraphNodes = this.props.paragraphs.map(function(paragraph, index) {
         var paragraphMarkup = "";
+        var paragraphKey = 'para'+index;
         if (typeof paragraph === 'object') {
           switch (paragraph.type) {
             case 'vcard': 
-            paragraphMarkup = <div id={paragraph.vcard.id} className="vcard">
+            paragraphMarkup = <div key={paragraphKey} id={paragraph.vcard.id} className="vcard">
               <div className="org"><b>{paragraph.vcard.org}</b></div>
               <a className="email" href={paragraph.vcard.email}>contact@apis-lazuli-consulting.fr</a>
               <div className="adr">
@@ -193,17 +214,17 @@ var ChapterParagraph = React.createClass({
             </div>
             break;
             case 'html':
-              paragraphMarkup = <div dangerouslySetInnerHTML={{__html: paragraph.text}}></div>
+              paragraphMarkup = <div key={paragraphKey} dangerouslySetInnerHTML={{__html: paragraph.text}}></div>
             break;
             default:
-              paragraphMarkup = <div>
+              paragraphMarkup = <div key={paragraphKey}>
                 <div className="rectangle color-2"></div>
                 <p className={paragraph.type}>{paragraph.text}</p>
               </div>
             break;
           }                            
         } else {
-          paragraphMarkup = <p>{paragraph}</p>
+          paragraphMarkup = <p key={paragraphKey} >{paragraph}</p>
         }
         return (          
           {paragraphMarkup}          
@@ -253,123 +274,3 @@ React.render(
   <Page url="chapters.json" pollInterval={2000} />,
   document.getElementById('content-apis')
 );
-
-/*
-
-var Comment = React.createClass({
-  render: function() {
-    var rawMarkup = converter.makeHtml(this.props.children.toString());
-    return (
-      <div className="comment">
-        <h2 className="commentAuthor">
-          {this.props.author}
-        </h2>
-        <span dangerouslySetInnerHTML={{__html: rawMarkup}} />
-      </div>
-    );
-  }
-});
-
-var CommentBox = React.createClass({
-  loadCommentsFromServer: function() {
-    $.ajax({
-      url: this.props.url,
-      dataType: 'json',
-      success: function(data) {
-        this.setState({data: data});
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
-  },
-  handleCommentSubmit: function(comment) {
-    var comments = this.state.data;
-    comments.push(comment);
-    this.setState({data: comments}, function() {
-      // `setState` accepts a callback. To avoid (improbable) race condition,
-      // `we'll send the ajax request right after we optimistically set the new
-      // `state.
-      $.ajax({
-        url: this.props.url,
-        dataType: 'json',
-        type: 'POST',
-        data: comment,
-        success: function(data) {
-          this.setState({data: data});
-        }.bind(this),
-        error: function(xhr, status, err) {
-          console.error(this.props.url, status, err.toString());
-        }.bind(this)
-      });
-    });
-  },
-  getInitialState: function() {
-    return {data: []};
-  },
-  componentDidMount: function() {
-    this.loadCommentsFromServer();
-    setInterval(this.loadCommentsFromServer, this.props.pollInterval);
-  },
-  render: function() {
-    return (
-      <div className="commentBox">
-        <h1>Comments</h1>
-        <CommentList data={this.state.data} />
-        <CommentForm onCommentSubmit={this.handleCommentSubmit} />
-      </div>
-    );
-  }
-});
-
-var CommentList = React.createClass({
-  render: function() {
-    var commentNodes = this.props.data.map(function(comment, index) {
-      return (
-        // `key` is a React-specific concept and is not mandatory for the
-        // purpose of this tutorial. if you're curious, see more here:
-        // http://facebook.github.io/react/docs/multiple-components.html#dynamic-children
-        <Comment author={comment.author} key={index}>
-          {comment.text}
-        </Comment>
-      );
-    });
-    return (
-      <div className="commentList">
-        {commentNodes}
-      </div>
-    );
-  }
-});
-
-var CommentForm = React.createClass({
-  handleSubmit: function(e) {
-    e.preventDefault();
-    var author = React.findDOMNode(this.refs.author).value.trim();
-    var text = React.findDOMNode(this.refs.text).value.trim();
-    if (!text || !author) {
-      return;
-    }
-    this.props.onCommentSubmit({author: author, text: text});
-    React.findDOMNode(this.refs.author).value = '';
-    React.findDOMNode(this.refs.text).value = '';
-  },
-  render: function() {
-    return (
-      <form className="commentForm" onSubmit={this.handleSubmit}>
-        <input type="text" placeholder="Your name" ref="author" />
-        <input type="text" placeholder="Say something..." ref="text" />
-        <input type="submit" value="Post" />
-      </form>
-    );
-  }
-});
-
-React.render(
-  <CommentBox url="comments.json" pollInterval={2000} />,
-  document.getElementById('content')
-  
-);
-
-*/
-
