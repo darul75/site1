@@ -54,11 +54,14 @@ var Logo = React.createClass({
   },
   render: function() {    
     return (       
-      <div className="logo-white" onClick={this.onClick}>
-        <div>
+      <div className="logo-white">
+        <div onClick={this.onClick}>
           <a href="#qui_sommes_nous">
             <img src="images/logo-blanc.svg" height="200px" className="logo-home animated bounce" />
           </a>
+        </div>
+        <div onClick={this.onClick}>
+          <i className="fa fa-3x fa-lightbulb-o fa-inverse"></i>
         </div>
       </div>
     );
@@ -188,6 +191,9 @@ var ChapterParagraph = React.createClass({
              </div>
              <div className="tel">{paragraph.vcard.phone}</div>            
             </div>
+            break;
+            case 'html':
+              paragraphMarkup = <div dangerouslySetInnerHTML={{__html: paragraph.text}}></div>
             break;
             default:
               paragraphMarkup = <div>

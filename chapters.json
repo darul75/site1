@@ -186,12 +186,18 @@
 	    },
 	    "chapter": {
 	    	"path": "contact",
-	    	"title": "Contact",
+	    	"title": "",
 	    	"citation": {
 	    		"author" : "Peter Drucker",
 	    		"text": "« Ceux qui résistent au changement finissent par accepter, mais dans douleur, qu’ils étaient dans l’erreur »"
 	    	},
 	    	"paragraphsCol1": [
+	    		{
+	    			"type": "html",
+	    			"text": "<iframe src=\"https://docs.google.com/forms/d/1QwgfScJMQLjmt1TkyAkbyoX-MLyu_Bu3G1NVNvN3VJs/viewform?embedded=true\" width=\"500\" height=\"780\" frameborder=\"0\" marginheight=\"0\" marginwidth=\"0\">Chargement en cours...</iframe>"
+	    		}	    		    			    			    		
+	    	],
+	    	"paragraphsCol2": [
 	    		{
 	    			"type": "vcard",
 	    			"vcard": {
@@ -205,12 +211,9 @@
 	    				},
 	    				"phone": "06 43 08 94 99"
 	    			}	    			
-	    		}
+	    		}	    		
 	    	],
-	    	"paragraphsCol2": [    			    		
-	    		  	
-	    	],
-	    	"styleHeight": 300	    	
+	    	"styleHeight": 900	    	
 		  }
 		},
 		{
