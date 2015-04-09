@@ -18,8 +18,9 @@ var Page = React.createClass({
     this.loadCommentsFromServer();
     // setInterval(this.loadCommentsFromServer, this.props.pollInterval);
     setTimeout(this.loadCommentsFromServer, 100);
-  },
+  },  
   componentDidUpdate: function(prevProps, prevState) {
+    
     $('.img-holder').imageScroll({
       container: $('#content-apis'),
       imgClass: 'img-holder-img',
@@ -27,24 +28,27 @@ var Page = React.createClass({
       mediaWidth: 1600,
       mediaHeight: 1200,
       speed:.2
-    });    
+    });
+    
+  /*  $('.citation').mouseover(function() {      
+      $(this).hide();
+    });
+    $('.citation').mouseout(function() {      
+      $(this).show();
+    });*/
   },
   render: function() {
-    var markup = <div></div>
+    
     if (this.state.data) {
-      return (
-        <div>
-          <Menu data={this.state.data.menus}/>
-          <Logo />
-          <Chapters data={this.state.data.sections}></Chapters>
-        </div>  
-      );
+      return React.DOM.div(
+        {}, 
+        <Menu data={this.state.data.menus}/>,
+        <ChapterList data={this.state.data.sections} />,
+        <Logo />
+      );      
     }
-    else {
-      return ( 
-        <div></div>        
-      );
-    }       
+    
+    return React.DOM.div();           
   }
 });
 
@@ -118,57 +122,43 @@ var MenuItem = React.createClass({
   }
 });
 
-var Chapters = React.createClass({
-  render: function() {    
-    return (       
-      <ChapterList data={this.props.data} />
-    );
-  }
-});
-
 var ChapterList = React.createClass({
-  render: function() {
+  render: function() {    
+
     if (this.props.data) {
+      
       var chapterMarkup = "";
       var immersiveMarkup = "";
-      var chaptersNodes = this.props.data.map(function(section, index) {        
-        if (section.chapter) {          
-          chapterMarkup = <div key={section.chapter.path}>
-          <Immersive key={index} immersive={section.immersive} citation={section.chapter.citation}></Immersive>
-          <Chapter chapter={section.chapter}></Chapter>
-          
-          </div>
-        } else {
-          chapterMarkup = <div key={section.immersive.img} />;
-        }
+      chaptersNodes = this.props.data.map(function(section, index) {        
+       
+        var keyChap = "chap"+index;
+        var keyImm = "immersive"+index;
 
-        return (                      
-            {chapterMarkup}          
-        );
+        if (section.chapter) {                            
+          chapterMarkup = <div>
+          <Immersive immersive={section.immersive} citation={section.chapter.citation}></Immersive>
+          <Chapter chapter={section.chapter}></Chapter></div>;          
+        } else {
+          chapterMarkup = React.DOM.div();
+        }        
+      
+        return React.DOM.div({key:keyChap}, chapterMarkup);
       });
+
+      return React.DOM.div({}, chaptersNodes);
     }
-    
-    return (
-      <div>{chaptersNodes}</div>
-    );
+            
+    return React.DOM.div();
   }
 });
 
 var Immersive = React.createClass({
-  onMouseEnterHandler: function(e) {
-    
-
-  },
-  onMouseLeaveHandler: function(e) {
-    
-
-  },
   render: function() { 
     var citationMarkup = ""    
     if (this.props.citation) {
       var citationClassname = "citation " + this.props.citation.class;
       citationMarkup = 
-        <div onMouseEnter={this.onMouseEnterHandler} onMouseLeave={this.onMouseLeaveHandler}>
+        <div>        
           <div className={citationClassname}>
             <div className="text">{this.props.citation.text}
               <div className="author">{this.props.citation.author}</div>
@@ -192,6 +182,7 @@ var Immersive = React.createClass({
     );
   }
 });
+
 
 var ChapterParagraph = React.createClass({
   render: function() {
@@ -226,17 +217,13 @@ var ChapterParagraph = React.createClass({
         } else {
           paragraphMarkup = <p key={paragraphKey} >{paragraph}</p>
         }
-        return (          
-          {paragraphMarkup}          
-        );
+
+        return React.DOM.div({key: paragraphKey}, paragraphMarkup);        
       });
     }
-    
-    return (
-      <div>
-        {paragraphNodes}
-      </div>
-    );
+
+    return React.DOM.div({}, paragraphNodes);
+        
   }
 });
 
@@ -247,20 +234,21 @@ var Chapter = React.createClass({
       style = {
         height: this.props.chapter.styleHeight + 'px !important'
       };  
-    }   
+    }       
+
     return (
       <section id={this.props.chapter.path} name={this.props.chapter.path} style={style}>
         <div className="chapter-content">
           <h1>{this.props.chapter.title}</h1>
           <div className="grid">
             <div className="grid__col grid__col--1-of-2">                              
-              <ChapterParagraph paragraphs={this.props.chapter.paragraphsCol1}></ChapterParagraph>
+                <ChapterParagraph paragraphs={this.props.chapter.paragraphsCol1}></ChapterParagraph>
             </div>
             <div className="grid__col grid__col--1-of-2">                              
-              <ChapterParagraph paragraphs={this.props.chapter.paragraphsCol2}></ChapterParagraph>
+                <ChapterParagraph paragraphs={this.props.chapter.paragraphsCol2}></ChapterParagraph>
             </div>
           </div>
-        </div>
+        </div>        
       </section>
     );
   }
