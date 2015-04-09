@@ -22,7 +22,7 @@ section:nth-of-type(1){background:whitesmoke;height:1200px;}
 section:nth-of-type(2){background:black;height:1600px;}
 
 #accueil>div.parallax {
-    background: url(../images/berlin-1.jpg) 50% 0 no-repeat fixed;
+    background: url(../images/img-1600-1200_5.jpg) 50% 0 no-repeat fixed;
     margin: 0;
   background-size: cover;
   height: 100%;
@@ -33,13 +33,16 @@ section:nth-of-type(2){background:black;height:1600px;}
   right: 0;
 }
 
-#story-freext>div:nth-of-type(2) {
-    background: url(../img/nike.png) 50% 0 no-repeat fixed;
+#apports>div.parallax {
+    background: url(../images/img-1600-1200_3.jpg) 50% 0 no-repeat fixed;
     margin: 0;
-    height: 1600px;
-    position:absolute;
-    top:0px;left:100px;
-    width:100%;
+  background-size: cover;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 #bottle>div:nth-of-type(1){
