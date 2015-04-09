@@ -139,18 +139,17 @@ var ChapterList = React.createClass({
         if (section.chapter) {  
           var animate = !section.chapter.noanimate ? 'bg animate' : 'bg';
 
-          var divStyle = {            
-            backgroundImage: 'url(' + section.immersive.img + ')',
-            backgroundSize: 'cover',
-            WebkitTransition: 'all', // note the capital 'W' here
-            msTransition: 'all' // 'ms' is the only lowercase vendor prefix
-          };
+          // var divStyle = {            
+          //   backgroundImage: 'url(' + section.immersive.img + ')',
+          //   backgroundSize: 'cover',
+          //   WebkitTransition: 'all', // note the capital 'W' here
+          //   msTransition: 'all' // 'ms' is the only lowercase vendor prefix
+          // };
 
           // <img className={animate} src={section.immersive.img} attrs-anim-detached="true" />
 
           chapterMarkup = 
-          <section style={divStyle} key={section.chapter.path} id={section.chapter.path} anim-pause="50">              
-            
+          <section key={section.chapter.path} id={section.chapter.path} anim-pause="50">
             <div className="story">
               <div className="layout">            
                 <div className="fake-lamp">
@@ -173,7 +172,8 @@ var ChapterList = React.createClass({
                   </div>
                 </div>
               </div>                          
-            </div>            
+            </div>
+            <div className="parallax" data-velocity="-.3"></div>            
           </section>
         } else {
           //chapterMarkup = <div key={section.immersive.img} />;
