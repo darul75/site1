@@ -1,0 +1,32 @@
+@CHARSET "ISO-8859-1";
+/* Common
+ * --------------------------------------- */
+ h1 {
+  font-size: 1.5rem;
+  margin: 20px 0;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  font-weight: 100;
+}
+
+/* Layout
+ * --------------------------------------- */
+ .layout {  
+  width: 100%;
+  height: 100%;
+}
+
+.layout-content {
+  height: 100%;
+}
+
+/* Section / Chapter
+ * --------------------------------------- */
+section div.story {
+  width: 100%;
+  height:100%;
+}
+

@@ -1,0 +1,230 @@
+{
+	"menus": [
+		{
+			"path": "#accueil",
+			"text": "Accueil"
+		},
+		{
+			"path": "#apports",
+			"text": "Apports"
+		},
+		{
+			"path": "#expertise",
+			"text": "Domaines d'expertise"
+		},
+		{
+			"path": "#interventions",
+			"text": "Interventions"
+		},
+		{
+			"path": "#contact",
+			"text": "Contact"
+		}		
+	],
+	"home": {
+		"logo": "images/logo-blanc.svg",
+		"logoHeight": "200px",
+		"logoClassnames": "logo-home animated bounce" 
+	},	
+	"sections": [
+		{
+	    "immersive": {
+	    	"img": "images/img-1600-1200_5.jpg",
+	    	"w": "1600",
+	    	"h": "1200",
+	    	"ratio": "1"
+	    },
+	    "chapter": {
+	    	"path": "accueil",
+	    	"title": "Leviers d’optimisation des ressources humaines",
+	    	"citation": {
+	    		"author" : "Galilée",
+	    		"text": "« Il est impossible d'enseigner quelquechose à quelqu'un, vous ne pouvez l'aider qu'à le découvrir en lui »",
+	    		"class": "home"
+	    	},
+	    	"paragraphsCol1": [
+	    		"L’innovation modifie la relation au travail, chacun devient acteur et moteur.",
+	    		"C’est l’ère du partage et de la transparence.",
+	    		"Diriger, c’est donner du sens pour s’assurer de l’engagement des collaborateurs.",
+	    		"Le management responsable, c’est jouer collectif et s’appuyer sur l’homme en lui même.",
+	    		"Notre approche considère l’homme pour ce qu‘il est et non ce qu’il sait « substantifique moelle » de notre méthode cognitive."    		
+	    	],
+	    	"paragraphsCol2": [    		
+	    		"Elle favorise la prise de conscience de son potentiel en lui permettant de maîtriser son devenir en accord avec la politique des ressources humaines de l’entreprise.",
+	    		"Elle développe ses capacités de recul, active ses attitudes positives face à l’environnement, dans le but de le transformer en force de proposition pour devenir acteur responsable."
+	    	]
+		  }
+		},
+		{
+	    "immersive": {
+	    	"img": "images/img-1600-1200_3.jpg",
+	    	"w": "1600",
+	    	"h": "1200",
+	    	"ratio": "1"
+	    },
+	    "chapter": {
+	    	"path": "apports",
+	    	"title": "Apports",
+	    	"citation": {
+	    		"author" : "John Fitzgerald Kennedy",
+	    		"text": "« Certaines personnes voient les choses comme elles sont et se demandent : Pourquoi ? Moi, je vois les choses comme elles pourraient être et je me dis : Pourquoi pas ? »"
+	    	},
+	    	"paragraphsCol1": [
+	    		"Notre capital expertise, acquis depuis de nombreuses années, facilite la compréhension de nos clients.",
+	    		"Nous optimisons leurs demandes par l’apport de méthodes innovantes."    		
+	    	],
+	    	"paragraphsCol2": [    		
+	    		"Vous maîtrisez les enjeux de nos interventions, notre implication est totale."
+	    	]
+		  }
+		},
+		{
+	    "immersive": {
+	    	"img": "images/img-1600-1200_2.jpg",
+	    	"w": "1600",
+	    	"h": "1200",
+	    	"ratio": "1"
+	    },
+	    "chapter": {
+	    	"path": "expertise",
+	    	"title": "Domaines d'expertises",
+	    	"citation": {
+	    		"author" : "Benjamin Franklin",
+	    		"text": "« Le bon jugement vient de l’expérience et l’expérience vient du jugement »"
+	    	},
+	    	"paragraphsCol1": [
+	    		{
+	    			"type": "expertise",
+	    			"text": "Management de transition"
+	    		},
+	    		{
+	    			"type": "expertise",
+	    			"text": "Création d’une Direction et de son équipe"
+	    		},
+	    		{
+	    			"type": "expertise",
+	    			"text": "Mise en œuvre d’une politique R.H. en synergie avec les besoins stratégiques"
+	    		},
+	    		{
+	    			"type": "expertise",
+	    			"text": "Harmonisation des engagements au sein des équipes managériales"
+	    		},
+	    		{
+	    			"type": "expertise",
+	    			"text": "Audit social"
+	    		},
+	    		{
+	    			"type": "expertise",
+	    			"text": "Assesment cognitif"
+	    		}    		
+	    	],
+	    	"paragraphsCol2": [    		
+	    		"Vous maîtrisez les enjeux de nos interventions, notre implication est totale."
+	    	]
+		  }
+		},
+		{
+	    "immersive": {
+	    	"img": "images/img-1600-1200_1.jpg",
+	    	"w": "1600",
+	    	"h": "1200",
+	    	"ratio": "1"
+	    },
+	    "chapter": {
+	    	"path": "interventions",
+	    	"title": "Interventions",	    	
+	    	"paragraphsCol1": [
+	    		{
+	    			"type": "expertise",
+	    			"text": "Audit des ressources humaines"
+	    		},
+	    		{
+	    			"type": "expertise",
+	    			"text": "Bilan professionnel"
+	    		},
+	    		{
+	    			"type": "expertise",
+	    			"text": "Coaching individuel et collectif"
+	    		},
+	    		{
+	    			"type": "expertise",
+	    			"text": "Recrutement"
+	    		},
+	    		{
+	    			"type": "expertise",
+	    			"text": "Mobilité professionnelle"
+	    		},
+	    		{
+	    			"type": "expertise",
+	    			"text": "Organigramme"
+	    		},
+	    		{
+	    			"type": "expertise",
+	    			"text": "Description de poste"
+	    		},
+	    		{
+	    			"type": "expertise",
+	    			"text": "Entretien Annuel d’Evaluation"
+	    		},
+	    		{
+	    			"type": "expertise",
+	    			"text": "Tableaux de bord des E.A.E"
+	    		}
+	    	],
+	    	"paragraphsCol2": [
+	    		"L’assesment cognitif est une méthode élaborée par Paris V La Sorbonne utilisée au sein d’Apis-Lazuli pour donner une valeur ajoutée significative aux missions citées ci-dessus.",
+	    		"C’est un outil de détection des potentiels et des compétences, dont les visées sont la découverte des qualités intrinsèques et non le vernis des connaissances.",
+	    		"Il se focalise particulièrement sur l’adaptation, la flexibilité, la prise de décision, le raisonnement et les capacités d’apprentissage, de management et les styles de communication."
+	    	]
+		  }
+		},
+		{
+	    "immersive": {
+	    	"img": "images/img-1600-1200_4.jpg",
+	    	"w": "1600",
+	    	"h": "1200",
+	    	"ratio": "1"
+	    },
+	    "chapter": {
+	    	"path": "contact",
+	    	"noanimate": true,
+	    	"title": "",
+	    	"citation": {
+	    		"author" : "Peter Drucker",
+	    		"text": "« Ceux qui résistent au changement finissent par accepter, mais dans douleur, qu’ils étaient dans l’erreur »"
+	    	},
+	    	"paragraphsCol1": [
+	    		{
+	    			"type": "html",
+	    			"text": "<iframe src=\"https://docs.google.com/forms/d/1QwgfScJMQLjmt1TkyAkbyoX-MLyu_Bu3G1NVNvN3VJs/viewform?embedded=true\" width=\"500\" height=\"780\" frameborder=\"0\" marginheight=\"0\" marginwidth=\"0\">Chargement en cours...</iframe>"
+	    		}	    		    			    			    		
+	    	],
+	    	"paragraphsCol2": [
+	    		{
+	    			"type": "vcard",
+	    			"vcard": {
+	    				"id": "Société",
+	    				"org": "Apis Lazuli Consulting",
+	    				"email": "mailto:contact@apis-lazuli-consulting.fr",
+	    				"address": {
+	    					"street": "14 rue Beffroy",
+	    					"locality": "Neuilly sur Seine",
+	    					"postal": "92200"	
+	    				},
+	    				"phone": "06 43 08 94 99"
+	    			}	    			
+	    		}	    		
+	    	],
+	    	"styleHeight": 900	    	
+		  }
+		},
+		{
+	    "immersive": {
+	    	"img": "images/img-1600-1200_4.jpg",
+	    	"w": "1600",
+	    	"h": "1200",
+	    	"ratio": "1"
+	    }
+		}
+	]
+}

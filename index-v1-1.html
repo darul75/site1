@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="test">   
+    <meta name="viewport" content="width=device-width">
+    <!-- http://designshack.net/articles/css/10-great-google-font-combinations-you-can-copy/  -->
+    <link href="http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet" type="text/css">    
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="javascripts/components/animate.css/animate.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/grid.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/styles.css" />
+    <link rel="stylesheet" type="text/css" href="javascripts/components/Parallax-JS/css/reset.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="javascripts/components/Parallax-JS/css/chrome.css"/> -->
+    <link rel="stylesheet" type="text/css" href="stylesheets/main-v1.css" />   
+    <script type="text/javascript" src="javascripts/components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/components/Parallax-JS/backgrounds.js"></script>
+    <script type="text/javascript" src="javascripts/components/Parallax-JS/kinetics.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.0/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.0/JSXTransformer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
+    <!-- parallax.js really screws with the DOM, so make sure it's included last so other things don't notice :) -->
+    
+    <script type="text/javascript" src="javascripts/components/PreloadJS/lib/preloadjs-0.6.0.min.js"></script>
+    <script type="text/javascript" src="javascripts/components/jquery.scrolly.js"></script>
+    
+    
+    
+    <title>Site1</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+<!--     <div class="header_menu">
+      <div class="white-rect-above"></div>
+      <header class="inner">
+        <ul class="menu">
+          <li>
+            <a href="#" on-click="scrollB('accueil')" style="width:110px; height: 60px;">
+              <img src="images/logo-blue.svg" height="60px" />
+            </a>
+          </li>                            
+        </ul>
+        <span class="title"></span>
+        <nav class="navigation" role="navigation">            
+          <h3 class="menu-toggle"></h3>
+          <div class="menu-nav">
+            <ul id="menu-menu-principal" class="menu">
+              <li><a href="#qui_sommes_nous">Qui sommes nous</a></li>
+              <li><a href="#apports">Apports</a></li>
+              <li><a href="#domaines_expertise">Domaines d'expertise</a></li>
+              <li><a href="#interventions">Interventions</a></li>
+              <li><a href="#contacts">Contacts</a></li>
+            </ul>            
+          </div>
+        </nav>
+      </header>
+    </div> -->
+
+    
+    <ul id="nav"></ul>
+    
+    <div id="content-apis"></div>
+
+    <script type="text/jsx;harmony=true" src="javascripts/main-v2-jsx.js"></script>
+
+
+
+
+    <!--   <section id="story-accueil">
+        <img class="bg animate" src="images/berlin-home.jpg" anim-focus-handler="undoAnimationClasses">
+        <div class="story home">
+          <div class="layout">
+            <div class="layout-content">            
+              <div class="chapter home">       
+                <div class="logo-white">
+                  <div>
+                    <a href="#qui_sommes_nous">
+                    <img src="images/logo-blanc.svg" height="200px" class="logo-home animated bounce" onclick="scrollB('qui_sommes_nous')"/>
+                    </a>
+                  </div>
+                  <div class="citation home">
+                  <div class="text">« Il est impossible d'enseigner quelquechose à quelqu'un, vous ne pouvez l'aider qu'à le découvrir en lui »
+                  </div>
+                  <div class="author">
+                    Galilée
+                  <div>
+                </div>
+                </div>                                            
+              </div>
+            </div>
+          </div>        
+        </div>     
+        <div class="footer" class="outer">            
+          <footer class="inner">                    
+            <span class="copyright">© 2015 Julien Valéry</span>
+            <span class="copyright">Mentions Légales</span>
+            <span class="copyright">Contact</span>
+          </footer>
+        </div>
+      </section>    
+
+    <section id="story-qui_sommes_nous" anim-pause="50" onFocus="notHome">
+      <img class="bg animate" src="images/berlin-6.jpg" anim-detached="true" />
+      <div class="story">
+        <div class="layout">
+          <div class="layout-content">
+            <div class="fake-lamp">
+              <i class="fa fa-lightbulb-o fa-5x fa-inverse"></i>
+            </div>
+            <div class="chapter animated">
+              <div class="chapter-white">                
+                <div class="chapter-content">
+                  <div class="arrow arrow-left"></div>
+                  <div class="arrow arrow-right"></div>
+                  <span>&nbsp;</span>              
+                  <div class="chapter-img who"></div>                  
+                  <div class="grid">
+                    <div class="grid__col grid__col--1-of-2">
+                      <h1>Qui sommes nous</h1> 
+                      <p><p>Leviers d’optimisation des ressources humaines</b></p>
+                      <p>L’innovation modifie la relation au travail, chacun devient acteur et moteur. C’est l’ère du partage et de la transparence. Diriger, c’est donner du sens pour s’assurer de l’engagement des collaborateurs. Le management responsable, c’est jouer collectif et s’appuyer sur l’homme en lui même.</p>
+                      <p>Notre approche considère l’homme pour ce qu‘il est et non ce qu’il sait « substantifique moelle » de notre méthode cognitive. elle favorise la prise de conscience de son potentiel en lui permettant de maîtriser son devenir en accord avec la politique des ressources humaines de l’entreprise,. elle développe ses capacités de recul, active ses attitudes positives face à l’environnement, dans le but de le transformer en force de proposition pour devenir acteur responsable.</p>
+                    </div>
+                    <div class="grid__col grid__col--1-of-2">
+                      <div class="citation">
+                        <div class="text">« Certaines personnes voient les choses comme elles sont et se demandent : Pourquoi ? Moi, je vois les choses comme elles pourraient être et je me dis : Pourquoi pas ? »
+                        </div>
+                        <div class="author">
+                          John Fitzgerald Kennedy
+                        </div>
+                      </div>                    
+                    </div>                    
+                  </div>                                                                  
+                </div>
+              </div>  
+            </div>              
+          </div>
+        </div> 
+      </div>
+    </section>
+
+    <section id="story-apports" anim-pause="50" onFocus="notHome">      
+      <img class="bg animate" src="images/berlin-7.jpg" anim-detached="true" />
+      <div class="story">
+        <div class="layout">
+          <div class="layout-content">
+            <div class="fake-lamp">
+              <i class="fa fa-lightbulb-o fa-5x fa-inverse"></i>
+            </div>
+            <div class="chapter animated">
+              <div class="chapter-white">
+                <div class="chapter-content">
+                  <div class="arrow arrow-left"></div>
+                  <div class="arrow arrow-right"></div>
+                  <span>&nbsp;</span>              
+                  <div class="chapter-img apports"></div>                  
+                  <div class="grid">
+                    <div class="grid__col grid__col--1-of-2">
+                        <h1>Apports</h1>
+                        <p>Notre capital expertise, acquis depuis de nombreuses années, facilite la compréhension de nos clients</p>
+                        <p>Nous optimisons leurs demandes de nos clients par l’apport de méthodes innovantes</p>               
+                        <p>Vous maîtrisez les enjeux de nos interventions, notre implication est totale</p>
+                    </div>
+                    <div class="grid__col grid__col--1-of-2">
+                      <div class="citation">
+                        <div class="text">« le bon jugement vient de l’expérience et l’expérience vient du jugement »</div>
+                        <div class="author">Benjamin Franklin</div>
+                      </div>
+                    </div>                    
+                  </div>                  
+                </div>
+              </div>              
+            </div>
+          </div> 
+        </div>
+      </div>
+    </section>
+    
+    <section id="story-domaines_expertise" anim-pause="50" onFocus="notHome">
+      <img class="bg animate" src="images/berlin-3.jpg" anim-detached="true" />
+      <div class="story">
+        <div class="layout">
+          <div class="layout-content">
+            <div class="fake-lamp">
+              <i class="fa fa-lightbulb-o fa-5x fa-inverse"></i>
+            </div>
+            <div class="chapter animated">
+              <div class="chapter-white">
+                <div class="chapter-content">
+                  <div class="arrow arrow-left"></div>
+                  <div class="arrow arrow-right"></div>
+                  <span>&nbsp;</span>              
+                  <div class="chapter-img expertise"></div>
+                  <div class="grid">
+                    <div class="grid__col grid__col--1-of-2">
+                        <h1>Domaines d'expertises</h1>               
+                        <div class="grid">
+                          <div class="grid__col grid__col--1-of-5">
+                            <div class="rectangle color-5"></div>
+                          </div>
+                          <div class="grid__col grid__col--4-of-5">                      
+                            <p class="expertise">Management de transition</p>
+                          </div>
+                        </div>
+                        <div class="grid">
+                          <div class="grid__col grid__col--1-of-5">
+                            <div class="rectangle color-4"></div>              
+                          </div>
+                          <div class="grid__col grid__col--4-of-5">                      
+                            <p class="expertise">Création d’une Direction et de son équipe</p>
+                          </div>
+                        </div>
+                        <div class="grid">
+                          <div class="grid__col grid__col--1-of-5">
+                            <div class="rectangle color-3"></div>              
+                          </div>
+                          <div class="grid__col grid__col--4-of-5">
+                            <p class="expertise">Mise en œuvre d’une politique R.H. en synergie avec les besoins stratégiques</p>
+                          </div>
+                        </div>
+                        <div class="grid">
+                          <div class="grid__col grid__col--1-of-5">
+                            <div class="rectangle color-2"></div>              
+                          </div>
+                          <div class="grid__col grid__col--4-of-5">
+                            <p class="expertise">Harmonisation des engagements au sein des équipes managériales</p>
+                          </div>
+                        </div>
+                        <div class="grid">
+                          <div class="grid__col grid__col--1-of-5">
+                            <div class="rectangle color-1"></div> 
+                          </div>
+                          <div class="grid__col grid__col--4-of-5">                      
+                            <p class="expertise">Audit social</p>
+                          </div>
+                        </div>
+                        <div class="grid">
+                          <div class="grid__col grid__col--1-of-5">
+                            <div class="rectangle color-3"></div>
+                          </div>
+                          <div class="grid__col grid__col--4-of-5">
+                            <p class="expertise">Assesment cognitif</p>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="grid__col grid__col--1-of-2">
+                      <div class="citation">
+                        <div class="text">« Ceux qui résistent au changement finissent par accepter, mais dans douleur, qu’ils étaient dans l’erreur »
+                        </div>
+                        <div class="author">
+                          Peter Drucker
+                        </div>
+                      </div>                    
+                    </div>                    
+                  </div>                                                         
+                </div>                
+              </div>
+            </div>              
+          </div>
+         </div> 
+      </div>
+    </section>
+    
+    <section id="story-interventions" anim-pause="50" onFocus="notHome">      
+      <img class="bg animate" src="images/berlin-4.jpg" anim-detached="true" />
+      <div class="story">
+        <div class="layout">
+          <div class="layout-content">
+            <div class="fake-lamp">
+              <i class="fa fa-lightbulb-o fa-5x fa-inverse"></i>
+            </div>
+            <div class="chapter animated">
+              <div class="chapter-white">
+                <div class="chapter-content">
+                  <div class="arrow arrow-left"></div>
+                  <div class="arrow arrow-right"></div>
+                  <span>&nbsp;</span>              
+                  <div class="chapter-img expertise"></div>
+                  <div class="grid">
+                    <div class="grid__col grid__col--1-of-2">
+                        <h1>Interventions</h1>
+                        <p>L’assesment cognitif est une méthode élaborée par Paris V La Sorbonne utilisée au sein d’Apis-Lazuli pour donner une valeur ajoutée significative aux missions citées ci-dessus.</p>
+                        <p>C’est un outil de détection des potentiels et des compétences, dont les visées sont la découverte des qualités intrinsèques et non le vernis des connaissances.</p> 
+                        <p>Il se focalise particulièrement sur l’adaptation, la flexibilité, la prise de décision, le raisonnement et les capacités d’apprentissage, de management et les styles de communication</p>
+                    </div>
+                    <div class="grid__col grid__col--1-of-2">
+                      <div class="citation">
+                        <div class="text">« le bon jugement vient de l’expérience et l’expérience vient du jugement »
+                        </div>
+                        <div class="author">Benjamin Franklin</div>
+                      </div>                    
+                    </div>                    
+                  </div>
+                </div>                                 
+              </div>
+            </div>              
+          </div>
+         </div> 
+      </div>
+    </section>
+    
+    <section id="story-contacts" anim-pause="50">
+      <img class="bg" src="images/berlin-2.jpg" />
+      <div class="story">
+        <div class="layout">
+          <div class="layout-content">            
+            <div class="fake-lamp">
+              <i class="fa fa-lightbulb-o fa-5x fa-inverse"></i>
+            </div>
+            <div class="chapter animated">
+              <div class="chapter-white">
+                <div class="chapter-content">
+                  <div class="arrow arrow-left"></div>
+                  <div class="arrow arrow-right"></div>
+                  <span>&nbsp;</span>                                    
+                  
+                  <h1>Contacts</h1>                  
+                </div>                                 
+              </div>
+            </div>              
+          </div>
+         </div> 
+      </div>
+    </section> -->
+  
+  </body>
+</html>
