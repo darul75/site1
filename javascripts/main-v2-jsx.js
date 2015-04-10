@@ -28,6 +28,8 @@ var Page = React.createClass({
     //   mediaHeight: 1200,
     //   speed:.2
     // });    
+
+    $('.parallax').scrolly({bgParallax: true});
   },
   render: function() {
     var markup = <div></div>
@@ -119,6 +121,49 @@ var Page = React.createClass({
 //   }
 // });
 
+var ChapterParagraph = React.createClass({
+  render: function() {
+    var paragraphNodes = "";
+    if (this.props.paragraphs) {
+      paragraphNodes = this.props.paragraphs.map(function(paragraph, index) {
+        var paragraphMarkup = "";
+        var paragraphKey = 'para'+index;
+        if (typeof paragraph === 'object') {
+          switch (paragraph.type) {
+            case 'vcard': 
+            paragraphMarkup = <div key={paragraphKey} id={paragraph.vcard.id} className="vcard">
+              <div className="org"><b>{paragraph.vcard.org}</b></div>
+              <a className="email" href={paragraph.vcard.email}>contact@apis-lazuli-consulting.fr</a>
+              <div className="adr">
+              <div className="street-address">{paragraph.vcard.address.street}</div>
+              <span className="locality">{paragraph.vcard.address.locality}</span>, <span className="postal-code">{paragraph.vcard.address.postal}</span>
+             </div>
+             <div className="tel">{paragraph.vcard.phone}</div>            
+            </div>
+            break;
+            case 'html':
+              paragraphMarkup = <div key={paragraphKey} dangerouslySetInnerHTML={{__html: paragraph.text}}></div>
+            break;
+            default:
+              paragraphMarkup = <div key={paragraphKey}>
+                <div className="rectangle color-2"></div>
+                <p className={paragraph.type}>{paragraph.text}</p>
+              </div>
+            break;
+          }                            
+        } else {
+          paragraphMarkup = <p key={paragraphKey} >{paragraph}</p>
+        }
+
+        return React.DOM.div({key: paragraphKey}, paragraphMarkup);        
+      });
+    }
+
+    return React.DOM.div({}, paragraphNodes);
+        
+  }
+});
+
 var Chapters = React.createClass({
   render: function() {    
     return (       
@@ -138,6 +183,7 @@ var ChapterList = React.createClass({
 
         if (section.chapter) {  
           var animate = !section.chapter.noanimate ? 'bg animate' : 'bg';
+          var homeCss = index === 0 ? 'home' : '';          
 
           // var divStyle = {            
           //   backgroundImage: 'url(' + section.immersive.img + ')',
@@ -147,25 +193,27 @@ var ChapterList = React.createClass({
           // };
 
           // <img className={animate} src={section.immersive.img} attrs-anim-detached="true" />
+          /*<div className="chapter-img who"></div>*/
 
           chapterMarkup = 
-          <section key={section.chapter.path} id={section.chapter.path} anim-pause="50">
+          <section className={homeCss} key={section.chapter.path} id={section.chapter.path}>
             <div className="story">
-              <div className="layout">            
-                <div className="fake-lamp">
-                  <i className="fa fa-lightbulb-o fa-5x fa-inverse"></i>
-                </div>
-                <div className="chapter animated">
-                  <div className="chapter-white">                
-                    <div className="chapter-content">
-                      <div className="arrow arrow-left"></div>
-                      <div className="arrow arrow-right"></div>
-                      <span>&nbsp;</span>              
-                      <div className="chapter-img who"></div>                  
-                      <div className="grid">
-                        <div className="grid__col grid__col--1-of-2">
-                          <h1>{section.chapter.title}</h1>
-                          <p> paragraphs </p>
+              <div className="layout">
+                <div className="layout-content">
+                  <div className="fake-lamp">
+                    <i className="fa fa-lightbulb-o fa-5x fa-inverse"></i>
+                  </div>                
+                  <div className="chapter animated">
+                    <div className="chapter-white">                
+                      <div className="chapter-content">
+                        <SlideButton />
+                        <span>&nbsp;</span>              
+                        <h1>{section.chapter.title}</h1>                  
+                        <div className="grid">
+                          <div className="grid__col grid__col--1-of-2">
+                            
+                            <ChapterParagraph paragraphs={section.chapter.paragraphsCol1}></ChapterParagraph>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -173,7 +221,8 @@ var ChapterList = React.createClass({
                 </div>
               </div>                          
             </div>
-            <div className="parallax" data-velocity="-.3"></div>            
+            <div className="parallax home" data-velocity="-.1"></div>
+            <div className="parallax home2" data-velocity="-.5" data-fit="525"></div>            
           </section>
         } else {
           //chapterMarkup = <div key={section.immersive.img} />;
@@ -191,6 +240,31 @@ var ChapterList = React.createClass({
         <div id="mock-scroller"></div>
         <div id="chapterNodes">{chaptersNodes}</div>
       </div>  
+    );
+  }
+});
+
+
+var SlideButton = React.createClass({
+  getInitialState: function() {
+    return {left: true, right: false};
+  },
+  onSlide: function(evt) {
+    this.setState({
+      left: !this.state.left,
+      right: !this.state.right
+    });
+    
+    evt.preventDefault();
+  },
+  render: function() {
+    var leftStyle = {display: this.state.left ? 'block' : 'none'};   
+    var rightStyle = {display: this.state.right ? 'block' : 'none'};
+    return (
+      <div>
+        <div className="arrow arrow-left" onClick={this.onSlide} style={leftStyle}></div>
+        <div className="arrow arrow-right" onClick={this.onSlide} style={rightStyle}></div>
+      </div>      
     );
   }
 });

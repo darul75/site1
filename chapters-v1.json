@@ -35,6 +35,29 @@
 	    	"ratio": "1"
 	    },
 	    "chapter": {
+	    	"path": "home",
+	    	"title": "",
+	    	"citation": {
+	    		"author" : "Galilée",
+	    		"text": "« Il est impossible d'enseigner quelquechose à quelqu'un, vous ne pouvez l'aider qu'à le découvrir en lui »",
+	    		"class": "home"
+	    	},
+	    	"paragraphsCol1": [
+	    	
+	    	],
+	    	"paragraphsCol2": [    		
+	    	
+	    	]
+		  }
+		},
+		{
+	    "immersive": {
+	    	"img": "images/img-1600-1200_5.jpg",
+	    	"w": "1600",
+	    	"h": "1200",
+	    	"ratio": "1"
+	    },
+	    "chapter": {
 	    	"path": "accueil",
 	    	"title": "Leviers d’optimisation des ressources humaines",
 	    	"citation": {

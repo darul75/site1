@@ -1,0 +1,328 @@
+/* Reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+body{font:13px/1.1 Helvetica,sans-serif;}
+
+
+ul.menu li {
+  display: inline-block;
+  padding: 8px 0px;
+  margin: 0px 10px;  
+}
+
+section {
+    min-height: 1000px;
+    position: relative;
+    width: 100% !important;
+    min-width: 1000px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+section:nth-of-type(1){background:whitesmoke;height:1200px;}
+section:nth-of-type(2){background:black;height:1600px;}
+
+#home>div.parallax.home {
+    background: url(../images/img-1600-1200_5.jpg) 50% 0 no-repeat fixed;
+    margin: 0;
+  background-size: cover;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom:0;
+}
+
+#home>div.parallax.home2 {
+    background: url(../images/logo-blanc.svg) 50% 0 no-repeat fixed;
+    margin: 0;  
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 100px;
+  right: 0;
+  bottom:300px;
+}
+
+#accueil>div.parallax {
+    background: url(../images/img-1600-1200_3.jpg) 50% 0 no-repeat fixed;
+    margin: 0;
+  background-size: cover;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#apports>div.parallax {
+    background: url(../images/img-1600-1200_3.jpg) 50% 0 no-repeat fixed;
+    margin: 0;
+  background-size: cover;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+
+section h1{
+  font-family: "Open Sans";  
+  font-size: 2rem;
+  margin: 10px 18px;
+  text-transform: uppercase;
+  width: 100%;
+  bottom: 0;
+}
+section p{
+    font-size: 1.2rem;
+  line-height: 1.6rem;
+  font-weight: 100;
+
+}
+section article{position:absolute;top:240px;left:40px;width:300px;z-index:4;}
+
+.parallax-item{position:absolute;z-index:5;top:40px;left:400px;}
+
+/* Layout
+ * --------------------------------------- */
+ .layout {  
+  width: 100%;
+  height: 100%;
+}
+
+.layout-content {
+  height: 100%;
+}
+
+/* Section / Chapter
+ * --------------------------------------- */
+section div.story {    
+  position: relative;
+  width: 100%;
+  height:100%;
+  background-color: rgba(26, 61, 132, 0.4);
+  z-index: 1;
+}
+
+section div.chapter {
+  position: relative;  
+  height: 100%;
+  opacity: 1.0;
+  margin: 0;
+  width: 1000px;
+}
+
+section div.chapter {
+  padding: 30px;
+}
+
+section div.chapter-white {  
+  background-color: #FFF;
+  position: relative;
+  top: 100px;
+}
+
+section div.chapter.home {
+  background-color: rgba(26, 61, 132, 0.7);
+}
+
+section div.chapter-img {
+  width: 100%;
+  height: 250px;
+  margin-bottom: 20px;
+}
+
+section div.home {
+  background: none;
+}
+
+section.home .story{
+  background: none;
+}
+
+section.home .chapter{
+  background-color: rgba(26, 61, 132, 0.7);
+}
+
+section.home .chapter-white{
+  background: none;
+}
+
+
+
+/* Menu
+ * --------------------------------------- */
+
+div.header_menu {
+  position: fixed;
+  width: 1000px;
+  height: 80px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* margin: 0 auto; */
+  background-color: #FFF;
+  z-index: 2;
+}
+
+div.header_menu h3.menu-toggle {
+  position: absolute;
+  top: 25px;
+  right: 19px;
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  background: transparent url("../images/sprites.png") -176px 4px no-repeat;
+  cursor: pointer;
+}
+
+div.menu-toggle-alone {
+  float: right;
+  position: relative;
+  top: 25px;
+  right: 19px;
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  background: transparent url("../images/sprites.png") -176px 4px no-repeat;
+  cursor: pointer;
+}
+
+div.header_menu .title {
+  font-family:"Open Sans";
+  position: absolute;  
+  font-size: 2rem;    
+  margin: 10px 18px;
+  text-transform: uppercase;
+  width: 100%;    
+  bottom: 0;  
+}
+
+header.menu-nav.toggled {
+  display: block;
+}
+
+header.menu-nav:after {
+  position: absolute;
+  top: -10px;
+  right: 6px;
+  border-bottom: 10px solid rgba( 255, 255, 255, .9 );
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  content: '';
+}
+
+header.menu-nav ul {
+  width: 1000px;
+  margin: auto;
+  font-family: 'Open Sans', Helvetica, sans-serif;  
+  list-style: none;
+}
+
+header.menu-nav ul li:nth-child(n+2) {
+  padding-left: 10px;
+  height: 7px;
+  bottom: 8px;
+  position: relative;
+}
+
+header.menu-nav ul li:nth-child(2) {
+  /* border-left: 2px solid #808285; */
+  padding-left: 10px;
+  height: 7px;
+  bottom: 8px;
+  position: relative;
+}
+
+header.menu-nav > ul > li:nth-child(n+1) > a {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #000;
+  bottom: 5px;
+  position: relative;
+  text-decoration: none;
+}
+
+header.menu-nav a:visited {
+  color: #808285;
+}
+
+header.menu-nav a:hover {
+  color: #808285;
+}
+
+/* Logo
+ * --------------------------------------- */
+
+.logo-white {
+  width: 100%;
+  height: 50%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  overflow: visible;
+}
+
+.logo-home {
+  cursor: pointer;  
+}
+
+.fake-lamp {
+  cursor: pointer;
+  width: 60px;
+  height: 80px;  
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  overflow: visible;
+}
+
+/*HIDE/SHOW PART ARROW*/
+.arrow-left {
+  cursor: pointer;
+  float: right;  
+  height: 0;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-right: 50px solid rgb(67, 67, 70);
+  width: 0;  
+  position: absolute;
+  right: 0px;
+  bottom: 300px;
+  z-index: 5;
+}
+
+.arrow-right {
+  cursor: pointer;
+  float: right;
+  margin: 0 auto;  
+  height: 0;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-left: 50px solid rgb(67, 67, 70);
+  width: 0;  
+  display:none;
+  position: absolute;
+  right: -28px;
+  bottom: 300px;
+  z-index: 5;
+}
+

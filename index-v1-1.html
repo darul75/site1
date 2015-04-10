@@ -12,13 +12,8 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="javascripts/components/animate.css/animate.css">
     <link rel="stylesheet" type="text/css" href="stylesheets/grid.css" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/styles.css" />
-    <link rel="stylesheet" type="text/css" href="javascripts/components/Parallax-JS/css/reset.css"/>
-    <!-- <link rel="stylesheet" type="text/css" href="javascripts/components/Parallax-JS/css/chrome.css"/> -->
-    <link rel="stylesheet" type="text/css" href="stylesheets/main-v1.css" />   
-    <script type="text/javascript" src="javascripts/components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/components/Parallax-JS/backgrounds.js"></script>
-    <script type="text/javascript" src="javascripts/components/Parallax-JS/kinetics.js"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheets/main-v1-1.css" />        
+    <script type="text/javascript" src="javascripts/components/jquery/dist/jquery.min.js"></script>    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.0/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.0/JSXTransformer.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/0.3.1/showdown.min.js"></script>
@@ -35,32 +30,25 @@
   <body>
 
     <!-- HEADER -->
-<!--     <div class="header_menu">
-      <div class="white-rect-above"></div>
-      <header class="inner">
-        <ul class="menu">
+    <div class="header_menu">      
+      <header class="menu-nav ">        
+        <ul id="menu-menu-principal" class="menu">
           <li>
-            <a href="#" on-click="scrollB('accueil')" style="width:110px; height: 60px;">
-              <img src="images/logo-blue.svg" height="60px" />
+            <a href="#accueil" onClick={this.onClick}>
+              <img src="images/logo-blue.svg" height="60" />
             </a>
-          </li>                            
-        </ul>
-        <span class="title"></span>
-        <nav class="navigation" role="navigation">            
-          <h3 class="menu-toggle"></h3>
-          <div class="menu-nav">
-            <ul id="menu-menu-principal" class="menu">
-              <li><a href="#qui_sommes_nous">Qui sommes nous</a></li>
-              <li><a href="#apports">Apports</a></li>
-              <li><a href="#domaines_expertise">Domaines d'expertise</a></li>
-              <li><a href="#interventions">Interventions</a></li>
-              <li><a href="#contacts">Contacts</a></li>
-            </ul>            
-          </div>
-        </nav>
+          </li>
+          <li><a href="#qui_sommes_nous">Accueil</a></li>
+          <li><a href="#apports">Apports</a></li>
+          <li><a href="#domaines_expertise">Domaines d'expertise</a></li>
+          <li><a href="#interventions">Interventions</a></li>
+          <li><a href="#contacts">Contacts</a></li>
+        </ul>                    
       </header>
-    </div> -->
+    </div>
 
+
+   
     
     <ul id="nav"></ul>
     
@@ -69,7 +57,20 @@
     <script type="text/jsx;harmony=true" src="javascripts/main-v2-jsx.js"></script>
 
 
-
+    <div class="logo-white">
+      <div>
+        <a href="#qui_sommes_nous">
+        <img src="images/logo-blanc.svg" height="200px" class="logo-home animated bounce" onclick="scrollB('qui_sommes_nous')"/>
+        </a>
+      </div>
+      <div class="citation home">
+        <div class="text">« Il est impossible d'enseigner quelquechose à quelqu'un, vous ne pouvez l'aider qu'à le découvrir en lui »
+        </div>
+        <div class="author">
+          Galilée
+        <div>
+      </div>
+    </div>
 
     <!--   <section id="story-accueil">
         <img class="bg animate" src="images/berlin-home.jpg" anim-focus-handler="undoAnimationClasses">
