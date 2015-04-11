@@ -126,7 +126,7 @@ var ChapterList = React.createClass({
       var chapterMarkup = "";      
       var self = this;
       var sectionHeight = {
-        minHeight : $(window).height()
+        height : $(window).height()
       };
 
       var chaptersNodes = this.props.data.map(function(section, index) {              
