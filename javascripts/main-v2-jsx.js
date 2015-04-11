@@ -20,23 +20,11 @@ var Page = React.createClass({
     setTimeout(this.loadCommentsFromServer, 100);
   },
   componentDidUpdate: function(prevProps, prevState) {
-    // $('.img-holder').imageScroll({
-    //   container: $('#content-apis'),
-    //   imgClass: 'img-holder-img',
-    //   windowObject: $(window),
-    //   mediaWidth: 1600,
-    //   mediaHeight: 1200,
-    //   speed:.2
-    // });    
-
     $('.parallax').scrolly({bgParallax: true});
   },
   render: function() {
     var markup = <div></div>
-    if (this.state.data) {
-      // <Menu data={this.state.data.menus}/>
-          // <Logo />
-          //
+    if (this.state.data) {      
       return (
         <div>          
           <Chapters data={this.state.data.sections}></Chapters>  
@@ -50,76 +38,6 @@ var Page = React.createClass({
     }       
   }
 });
-
-// var Logo = React.createClass({
-//   onClick: function(evt) {
-//     scrollToAnchor("accueil");
-//     evt.preventDefault();
-//   },
-//   render: function() {    
-//     // <div onClick={this.onClick}>
-//         //   <i className="fa fa-3x fa-lightbulb-o fa-inverse"></i>
-//         // </div>
-
-//     return (       
-//       <div className="logo-white">
-//         <div onClick={this.onClick}>
-//           <a href="#qui_sommes_nous">
-//             <img src="images/logo-blanc.svg" height="200px" className="logo-home animated bounce" />
-//           </a>
-//         </div>        
-//       </div>
-//     );
-//   }
-// });
-
-// var Menu = React.createClass({
-//   onClick: function(evt) {
-//     // scrollToAnchor("accueil");
-//     // evt.preventDefault();
-//   },
-//   render: function() {   
-//     if (this.props.data) {  
-//       var menuItemMarkup = "";
-//       var menusNodes = this.props.data.map(function(menu, index) {                    
-//         return (
-//           <MenuItem key={menu.path} path={menu.path} text={menu.text} />          
-//         );
-//       });
-//     }
-
-//     return (       
-//       <div className="header_menu">      
-//         <header className="inner">
-//           <div className="menu-nav">
-//             <ul id="menu-menu-principal" className="menu">
-//               <li>
-//                 <a href="#accueil" onClick={this.onClick}>
-//                   <img src="images/logo-blue.svg" height="60" />
-//                 </a>
-//               </li>
-//               {menusNodes}
-//             </ul>            
-//           </div>          
-//         </header>
-//       </div>
-//     );
-//   }
-// });
-
-// var MenuItem = React.createClass({
-//   onClick: function(evt) {
-//     scrollToAnchor(evt.target.hash.replace('#', ''));
-//     //evt.preventDefault();
-//   },
-//   render: function() {    
-//     return (       
-//       <li>
-//         <a href={this.props.path} onClick={this.onClick}>{this.props.text}</a>
-//       </li>
-//     );
-//   }
-// });
 
 var ChapterParagraph = React.createClass({
   render: function() {
@@ -173,59 +91,85 @@ var Chapters = React.createClass({
 });
 
 var ChapterList = React.createClass({
+  getInitialState: function() {
+    return {data: this.props.data};
+  },  
+  slideButtonClick: function(index, pathId) {        
+    var domElt = $('#' + pathId + ' .chapter-white');
+
+    if (domElt.hasClass('slideOutLeft')) {
+      domElt.removeClass('slideOutLeft');
+      domElt.addClass('slideInLeft');
+    }
+    else {
+      domElt.removeClass('slideInLeft');
+      domElt.addClass('slideOutLeft');
+    }
+    
+  },
+  lightButtonOver: function(index, pathId) {        
+    var domElt = $('#' + pathId + ' .story');
+    domElt.addClass('no-bg');    
+  },
+  lightButtonOut: function(index, pathId) {        
+    var domElt = $('#' + pathId + ' .story');    
+    domElt.removeClass('no-bg');    
+  },
   render: function() {
     if (this.props.data) {
-      var chapterMarkup = "";
-      var immersiveMarkup = "";
-      var chaptersNodes = this.props.data.map(function(section, index) {
+      var chapterMarkup = "";      
+      var self = this;
+      var chaptersNodes = this.props.data.map(function(section, index) {              
 
-        // <Immersive key={index} immersive={section.immersive} citation={section.chapter.citation}></Immersive>        
-
-        if (section.chapter) {  
-          var animate = !section.chapter.noanimate ? 'bg animate' : 'bg';
+        if (section.chapter) {            
           var homeCss = index === 0 ? 'home' : '';          
 
-          // var divStyle = {            
-          //   backgroundImage: 'url(' + section.immersive.img + ')',
-          //   backgroundSize: 'cover',
-          //   WebkitTransition: 'all', // note the capital 'W' here
-          //   msTransition: 'all' // 'ms' is the only lowercase vendor prefix
-          // };
+          var parallaxStyle = {
+            background: 'url('+section.immersive.img+') 50% 0 no-repeat fixed',
+            margin: 0,
+            backgroundSize: 'cover',
+            height: '100%',
+            position: 'absolute',
+            width: '100%',
+            top: 0,
+            left: 0,
+            right: 0
+          };     
 
-          // <img className={animate} src={section.immersive.img} attrs-anim-detached="true" />
-          /*<div className="chapter-img who"></div>*/
+          var boundSlideClick = self.slideButtonClick.bind(null, index, section.chapter.path);
+          var boundLightOver = self.lightButtonOver.bind(null, index, section.chapter.path);
+          var boundLightOut = self.lightButtonOut.bind(null, index, section.chapter.path);
 
           chapterMarkup = 
           <section className={homeCss} key={section.chapter.path} id={section.chapter.path}>
             <div className="story">
               <div className="layout">
                 <div className="layout-content">
-                  <div className="fake-lamp">
-                    <i className="fa fa-lightbulb-o fa-5x fa-inverse"></i>
-                  </div>                
-                  <div className="chapter animated">
-                    <div className="chapter-white">                
+                  <LightButton onLightButtonOver={boundLightOver} onLightButtonOut={boundLightOut} />                                 
+                  <div className="chapter">
+                    <div className="chapter-white animated">  
                       <div className="chapter-content">
-                        <SlideButton />
+                        <SlideButton onSlideButtonClick={boundSlideClick} />
                         <span>&nbsp;</span>              
                         <h1>{section.chapter.title}</h1>                  
                         <div className="grid">
-                          <div className="grid__col grid__col--1-of-2">
-                            
+                          <div className="grid__col grid__col--1-of-2">                            
                             <ChapterParagraph paragraphs={section.chapter.paragraphsCol1}></ChapterParagraph>
                           </div>
+                          <div className="grid__col grid__col--1-of-2">                            
+                            <ChapterParagraph paragraphs={section.chapter.paragraphsCol2}></ChapterParagraph>
+                          </div>
                         </div>
-                      </div>
+                      </div>                                    
                     </div>
+                    <Citation citation={section.chapter.citation} />
                   </div>
                 </div>
               </div>                          
             </div>
-            <div className="parallax home" data-velocity="-.1"></div>
-            <div className="parallax home2" data-velocity="-.5" data-fit="525"></div>            
+            <div style={parallaxStyle} className="parallax"></div>                        
           </section>
-        } else {
-          //chapterMarkup = <div key={section.immersive.img} />;
+        } else {          
           chapterMarkup = '';
         }
 
@@ -244,9 +188,27 @@ var ChapterList = React.createClass({
   }
 });
 
+var Citation = React.createClass({
+  render: function() { 
+    var citationMarkup = ""    
+    if (this.props.citation) {
+      var citationAddClass = this.props.citation.class ? this.props.citation.class : '';
+      var citationClassname = "citation " + citationAddClass;
+      citationMarkup =         
+        <div className={citationClassname}>
+          <div className="text">{this.props.citation.text}
+            <div className="author">{this.props.citation.author}</div>
+          </div>          
+        </div>                
+    } else {
+      citationMarkup = <div></div>
+    }   
+    return React.DOM.div({}, citationMarkup);
+  }
+});
 
-var SlideButton = React.createClass({
-  getInitialState: function() {
+var SlideButton = React.createClass({  
+  getInitialState: function() {    
     return {left: true, right: false};
   },
   onSlide: function(evt) {
@@ -255,6 +217,7 @@ var SlideButton = React.createClass({
       right: !this.state.right
     });
     
+    this.props.onSlideButtonClick();
     evt.preventDefault();
   },
   render: function() {
@@ -265,6 +228,24 @@ var SlideButton = React.createClass({
         <div className="arrow arrow-left" onClick={this.onSlide} style={leftStyle}></div>
         <div className="arrow arrow-right" onClick={this.onSlide} style={rightStyle}></div>
       </div>      
+    );
+  }
+});
+
+var LightButton = React.createClass({  
+  mouseOver: function(evt) {    
+    this.props.onLightButtonOver();
+    evt.preventDefault();
+  },
+  mouseOut: function(evt) {    
+    this.props.onLightButtonOut();
+    evt.preventDefault();
+  },
+  render: function() {    
+    return (
+      <div className="fake-lamp" onMouseEnter={this.mouseOver} onMouseLeave={this.mouseOut}>
+        <i className="fa fa-lightbulb-o fa-5x fa-inverse"></i>
+      </div>
     );
   }
 });

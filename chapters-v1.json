@@ -29,7 +29,7 @@
 	"sections": [
 		{
 	    "immersive": {
-	    	"img": "images/img-1600-1200_5.jpg",
+	    	"img": "../images/img-1600-1200_5.jpg",
 	    	"w": "1600",
 	    	"h": "1200",
 	    	"ratio": "1"
@@ -43,7 +43,7 @@
 	    		"class": "home"
 	    	},
 	    	"paragraphsCol1": [
-	    	
+	    		
 	    	],
 	    	"paragraphsCol2": [    		
 	    	
@@ -52,7 +52,7 @@
 		},
 		{
 	    "immersive": {
-	    	"img": "images/img-1600-1200_5.jpg",
+	    	"img": "../images/img-1600-1200_3.jpg",
 	    	"w": "1600",
 	    	"h": "1200",
 	    	"ratio": "1"
@@ -62,8 +62,7 @@
 	    	"title": "Leviers d’optimisation des ressources humaines",
 	    	"citation": {
 	    		"author" : "Galilée",
-	    		"text": "« Il est impossible d'enseigner quelquechose à quelqu'un, vous ne pouvez l'aider qu'à le découvrir en lui »",
-	    		"class": "home"
+	    		"text": "« Il est impossible d'enseigner quelquechose à quelqu'un, vous ne pouvez l'aider qu'à le découvrir en lui »"	
 	    	},
 	    	"paragraphsCol1": [
 	    		"L’innovation modifie la relation au travail, chacun devient acteur et moteur.",
@@ -80,7 +79,7 @@
 		},
 		{
 	    "immersive": {
-	    	"img": "images/img-1600-1200_3.jpg",
+	    	"img": "../images/img-1600-1200_2.jpg",
 	    	"w": "1600",
 	    	"h": "1200",
 	    	"ratio": "1"
@@ -103,7 +102,7 @@
 		},
 		{
 	    "immersive": {
-	    	"img": "images/img-1600-1200_2.jpg",
+	    	"img": "../images/img-1600-1200_1.jpg",
 	    	"w": "1600",
 	    	"h": "1200",
 	    	"ratio": "1"
@@ -148,14 +147,18 @@
 		},
 		{
 	    "immersive": {
-	    	"img": "images/img-1600-1200_1.jpg",
+	    	"img": "../images/img-1600-1200_4.jpg",
 	    	"w": "1600",
 	    	"h": "1200",
 	    	"ratio": "1"
 	    },
 	    "chapter": {
 	    	"path": "interventions",
-	    	"title": "Interventions",	    	
+	    	"title": "Interventions",
+	    	"citation": {
+	    		"author" : "Peter Drucker",
+	    		"text": "« Ceux qui résistent au changement finissent par accepter, mais dans douleur, qu’ils étaient dans l’erreur »"
+	    	},
 	    	"paragraphsCol1": [
 	    		{
 	    			"type": "expertise",
@@ -203,7 +206,7 @@
 		},
 		{
 	    "immersive": {
-	    	"img": "images/img-1600-1200_4.jpg",
+	    	"img": "../images/img-1600-1200_5.jpg",
 	    	"w": "1600",
 	    	"h": "1200",
 	    	"ratio": "1"
@@ -211,11 +214,7 @@
 	    "chapter": {
 	    	"path": "contact",
 	    	"noanimate": true,
-	    	"title": "",
-	    	"citation": {
-	    		"author" : "Peter Drucker",
-	    		"text": "« Ceux qui résistent au changement finissent par accepter, mais dans douleur, qu’ils étaient dans l’erreur »"
-	    	},
+	    	"title": "",	    	
 	    	"paragraphsCol1": [
 	    		{
 	    			"type": "html",
@@ -243,11 +242,11 @@
 		},
 		{
 	    "immersive": {
-	    	"img": "images/img-1600-1200_4.jpg",
+	    	"img": "../images/img-1600-1200_4.jpg",
 	    	"w": "1600",
 	    	"h": "1200",
 	    	"ratio": "1"
 	    }
-		}
+	}
 	]
 }
