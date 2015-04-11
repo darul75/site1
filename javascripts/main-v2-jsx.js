@@ -125,6 +125,10 @@ var ChapterList = React.createClass({
     if (this.props.data) {
       var chapterMarkup = "";      
       var self = this;
+      var sectionHeight = {
+        minHeight : $(window).height()
+      };
+
       var chaptersNodes = this.props.data.map(function(section, index) {              
 
         if (section.chapter) {            
@@ -146,8 +150,10 @@ var ChapterList = React.createClass({
           var boundLightOver = self.lightButtonOver.bind(null, index, section.chapter.path);
           var boundLightOut = self.lightButtonOut.bind(null, index, section.chapter.path);
 
+          
+
           chapterMarkup = 
-          <section className={homeCss} key={section.chapter.path} id={section.chapter.path}>
+          <section className={homeCss} key={section.chapter.path} id={section.chapter.path} style={sectionHeight}>
             <div className="story">
               <div className="layout">
                 <div className="layout-content">
