@@ -12,8 +12,7 @@ ul.menu li {
   margin: 0px 10px;  
 }
 
-section {
-  min-height: 1000px;
+section {  
   position: relative;
   width: 100% !important;
   min-width: 1000px;
