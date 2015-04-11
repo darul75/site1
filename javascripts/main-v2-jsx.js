@@ -59,6 +59,12 @@ var ChapterParagraph = React.createClass({
              <div className="tel">{paragraph.vcard.phone}</div>            
             </div>
             break;
+            case 'vcard-person': 
+            paragraphMarkup = <div key={paragraphKey} id={paragraph.vcard.id} className="vcard">
+              <div className="name"><b>{paragraph.vcard.name}</b></div>                           
+              <div className="title">{paragraph.vcard.title}</div>
+            </div>
+            break;
             case 'html':
               paragraphMarkup = <div key={paragraphKey} dangerouslySetInnerHTML={{__html: paragraph.text}}></div>
             break;

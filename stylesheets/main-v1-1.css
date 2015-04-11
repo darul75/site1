@@ -23,11 +23,12 @@ section {
   display: block;
 }
 
-section h1{
+section h1 {
   font-family: "Open Sans";
   font-size: 1.4rem;
   text-transform: uppercase;
-  width: 100%;
+  line-height: 2rem;
+  width: 50%;
 }
 section p{
     font-size: 1.2rem;
@@ -75,7 +76,7 @@ section div.chapter {
 section div.chapter-white {  
   background-color: #FFF;
   position: relative;
-  top: 30px;
+  padding-top: 50px;
   height: 700px;
 }
 
@@ -145,7 +146,7 @@ section .chapter-content {
 div.header_menu {
   position: fixed;
   width: 1000px;
-  height: 80px;
+  height: 90px;
   top: 0;
   left: 0;
   bottom: 0;
@@ -287,7 +288,7 @@ header.menu-nav a:hover {
   height: 0;
   border-top: 50px solid transparent;
   border-bottom: 50px solid transparent;
-  border-right: 50px solid rgb(67, 67, 70);
+  border-right: 50px solid #061B6A;
   width: 0;  
   position: absolute;
   right: 0px;
@@ -302,7 +303,7 @@ header.menu-nav a:hover {
   height: 0;
   border-top: 50px solid transparent;
   border-bottom: 50px solid transparent;
-  border-left: 50px solid rgb(67, 67, 70);
+  border-left: 50px solid #061B6A;
   width: 0;  
   display:none;
   position: absolute;
@@ -313,7 +314,8 @@ header.menu-nav a:hover {
 
 .vcard {
   position: relative;
-  left: 100px;  
+  left: 100px; 
+  margin: 20px; 
 }
 
 section.home div.arrow {
@@ -334,4 +336,11 @@ section.home div.arrow {
 .color-3 { background-color: #0C2D8C; }
 .color-4 { background-color: #0F3FAA; }
 .color-5 { background-color: #0C2D8C; }
+
+#footer {
+  height: 10px;
+  background-color: white;
+  font-size: 12px;
+  padding: 10px 30px; 
+}
 

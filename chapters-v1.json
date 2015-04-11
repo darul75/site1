@@ -235,6 +235,22 @@
 	    				},
 	    				"phone": "06 43 08 94 99"
 	    			}	    			
+	    		},
+	    		{
+	    			"type": "vcard-person",
+	    			"vcard": {
+	    				"id": "Société",
+	    				"name": "Pierre Coeroli",	    					    					    				
+	    				"title": "Président"
+	    			}	    			
+	    		},
+	    		{
+	    			"type": "vcard-person",
+	    			"vcard": {
+	    				"id": "Société",
+	    				"name": "Christine d’Aubigny de Saint Vulfran",
+	    				"title": "CEO"		
+	    			}	    			
 	    		}	    		
 	    	],
 	    	"styleHeight": 900	    	
