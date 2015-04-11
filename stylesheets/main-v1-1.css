@@ -22,6 +22,10 @@ section {
   display: block;
 }
 
+section#contact {  
+  min-height: 1000px;
+}
+
 section h1 {
   font-family: "Open Sans";
   font-size: 1.4rem;
@@ -77,6 +81,7 @@ section div.chapter-white {
   position: relative;
   padding-top: 50px;
   height: 700px;
+  z-index: 3;
 }
 
 #contact div.chapter-white {    
@@ -341,5 +346,35 @@ section.home div.arrow {
   background-color: white;
   font-size: 12px;
   padding: 10px 30px; 
+}
+
+@media (max-height: 800px) {
+  section div.chapter-img {
+    height: 100px;
+  }
+
+  .logo-home {
+    height: 150px;
+  }
+
+  section p {
+    font-size: 16px;
+    line-height: 1.4rem;
+    font-weight: normal;
+  }
+
+  .citation {
+    padding: 0px 30px;
+    font-size: 1.3rem;
+    line-height: 2rem;
+    margin-top: 40%;
+  }
+
+  .citation .text {
+    font-size: 1.2rem;   
+    line-height: 2rem;
+        
+  }
+
 }
 
