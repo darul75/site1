@@ -19,32 +19,15 @@ var Page = React.createClass({
     // setInterval(this.loadCommentsFromServer, this.props.pollInterval);
     setTimeout(this.loadCommentsFromServer, 100);
   },  
-  componentDidUpdate: function(prevProps, prevState) {
-    
-    $('.img-holder').imageScroll({
-      container: $('#content-apis'),
-      imgClass: 'img-holder-img',
-      windowObject: $(window),
-      mediaWidth: 1600,
-      mediaHeight: 1200,
-      speed:.2
-    });
-    
-  /*  $('.citation').mouseover(function() {      
-      $(this).hide();
-    });
-    $('.citation').mouseout(function() {      
-      $(this).show();
-    });*/
+  componentDidUpdate: function(prevProps, prevState) {    
+    $('.parallax').scrolly({bgParallax: true});      
   },
   render: function() {
-    
+    // <Menu data={this.state.data.menus}/>,    
     if (this.state.data) {
       return React.DOM.div(
-        {}, 
-        <Menu data={this.state.data.menus}/>,
-        <ChapterList data={this.state.data.sections} />,
-        <Logo />
+        {},         
+        <ChapterList data={this.state.data.sections} />        
       );      
     }
     
@@ -52,23 +35,13 @@ var Page = React.createClass({
   }
 });
 
-var Logo = React.createClass({
-  onClick: function(evt) {
-    scrollToAnchor("accueil");
-    evt.preventDefault();
-  },
-  render: function() {    
-    // <div onClick={this.onClick}>
-        //   <i className="fa fa-3x fa-lightbulb-o fa-inverse"></i>
-        // </div>
-
+var Logo = React.createClass({  
+  render: function() {
     return (       
-      <div className="logo-white">
-        <div onClick={this.onClick}>
-          <a href="#qui_sommes_nous">
-            <img src="images/logo-blanc.svg" height="200px" className="logo-home animated bounce" />
-          </a>
-        </div>        
+      <div className="logo-white">        
+        <a href="/">
+          <img src="images/logo-blanc.svg" height="200px" className="logo-home animated bounce" />
+        </a>
       </div>
     );
   }
@@ -123,9 +96,21 @@ var MenuItem = React.createClass({
 });
 
 var ChapterList = React.createClass({
+  lightButtonOver: function(index, pathId) {        
+    var domElt = $('#' + pathId + ' .story');    
+    domElt.addClass('no-bg');    
+  },
+  lightButtonOut: function(index, pathId) {        
+    var domElt = $('#' + pathId + ' .story');        
+    domElt.removeClass('no-bg');        
+  },  
   render: function() {    
 
     if (this.props.data) {
+      var self = this;
+      var sectionHeight = {
+        height : $(window).height()
+      };      
       
       var chapterMarkup = "";
       var immersiveMarkup = "";
@@ -134,21 +119,117 @@ var ChapterList = React.createClass({
         var keyChap = "chap"+index;
         var keyImm = "immersive"+index;
 
-        if (section.chapter) {                            
-          chapterMarkup = <div>
-          <Immersive immersive={section.immersive} citation={section.chapter.citation}></Immersive>
-          <Chapter chapter={section.chapter}></Chapter></div>;          
-        } else {
-          chapterMarkup = React.DOM.div();
-        }        
-      
-        return React.DOM.div({key:keyChap}, chapterMarkup);
+        if (section.chapter) {  
+          var homeCss = index === 0 ? '' : '';
+          var logo = index === 0 ? <Logo /> : '';
+          var parallaxStyle;
+          var parallaxImage;
+          var velocity = '';
+          var lightButton = '';
+
+          if (section.immersive) {            
+            
+            parallaxStyle = {
+              background: 'url('+section.immersive.img+') 50% 0 no-repeat fixed',
+              margin: 0,
+              backgroundSize: 'cover',
+              height: '100%',
+              position: 'absolute',
+              width: '100%',
+              top: 0,
+              left: 0,
+              right: 0
+            };
+            parallaxImage = <div data-fit="500" style={parallaxStyle} className=""></div>
+
+            var boundLightOver = self.lightButtonOver.bind(null, index, section.chapter.path);
+            var boundLightOut = self.lightButtonOut.bind(null, index, section.chapter.path);
+            lightButton = <LightButton onLightButtonOver={boundLightOver} onLightButtonOut={boundLightOut} />
+
+          } 
+          
+          var height = section.immersive ? sectionHeight : {};
+          var chapterClass = section.immersive ? '': 'chapter-white animated';
+
+            chapterMarkup = 
+          <section className={homeCss} key={section.chapter.path} id={section.chapter.path} style={height}>
+            <div className="story">
+              <div className="layout">
+                <div className="layout-content">
+                  <div className="chapter">
+                    <div className={chapterClass}>  
+                      <div className="chapter-content">     
+                        <h1>{section.chapter.title}</h1>
+                        {logo}
+                        <Citation citation={section.chapter.citation} />
+                        {lightButton}
+                        <div className="grid">
+                          <div className="grid__col grid__col--1-of-2"> 
+                            <ChapterParagraph paragraphs={section.chapter.paragraphsCol1}></ChapterParagraph>
+                          </div>
+                          <div className="grid__col grid__col--1-of-2">
+                            <ChapterParagraph paragraphs={section.chapter.paragraphsCol2}></ChapterParagraph>
+                          </div>
+                        </div>
+                      </div>                                    
+                    </div>                    
+                  </div>
+                </div>
+              </div>                          
+            </div>
+            {parallaxImage}                        
+          </section>
+        } else {          
+          chapterMarkup = '';
+        }
+
+        return (                      
+            {chapterMarkup}          
+        );
+        
       });
 
       return React.DOM.div({}, chaptersNodes);
     }
             
     return React.DOM.div();
+  }
+});
+
+var Citation = React.createClass({
+  render: function() { 
+    var citationMarkup = ""    
+    if (this.props.citation) {
+      var citationAddClass = this.props.citation.class ? this.props.citation.class : '';
+      var citationClassname = "citation " + citationAddClass;
+      citationMarkup =         
+        <div className={citationClassname}>
+          <div className="text">{this.props.citation.text}
+            <div className="author">{this.props.citation.author}</div>
+          </div>          
+        </div>                
+    } else {
+      citationMarkup = <div></div>
+    }   
+    return React.DOM.div({}, citationMarkup);
+  }
+});
+
+var LightButton = React.createClass({  
+  mouseOver: function(evt) {    
+    this.props.onLightButtonOver();
+    evt.preventDefault();
+  },
+  mouseOut: function(evt) {    
+    this.props.onLightButtonOut();
+    evt.preventDefault();
+  },
+  render: function() {    
+    return (
+      <div className="fake-lamp" onMouseEnter={this.mouseOver} onMouseLeave={this.mouseOut}>
+        <i className="fa fa-lightbulb-o fa-5x fa-inverse"></i>
+      </div>
+    );
   }
 });
 
@@ -259,6 +340,6 @@ var converter = new Showdown.converter();
 React.render(
   // <CommentBox url="comments.json" pollInterval={2000} />,
   // document.getElementById('content')
-  <Page url="chapters.json" pollInterval={2000} />,
+  <Page url="chapters-v3.json" pollInterval={2000} />,
   document.getElementById('content-apis')
 );

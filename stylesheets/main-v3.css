@@ -31,42 +31,112 @@ ul.menu li {
   margin: 0px 10px;  
 }
 
+/* Section / Chapter
+ * --------------------------------------- */
 section {  
-  width: 100%;  
-  height: 600px;  
+  position: relative;
+  width: 100% !important;
+  min-width: 1000px;
+  margin: 0;
+  padding: 0;  
+  display: block;
 }
 
-section div.chapter-content {    
-  width: 1000px;
-  padding-top: 100px;  
+section div.story {    
+  position: relative;  
+  height:100%;  
+  z-index: 1;
+  width: 1000px;  
   margin: auto;
+  background-color: rgba(26, 61, 132, 0.95);
 }
 
+section div.no-bg {    
+  background: none;
+}
+
+section div.chapter {
+  position: relative;  
+  height: 100%;
+  opacity: 1.0;
+  margin: 0;
+  width: 1000px;
+}
+
+section div.chapter-white {  
+  background-color: #FFF;
+  position: relative;
+  padding-top: 50px;  
+  z-index: 3;
+}
+
+#contact div.chapter-white {    
+  height: 860px;
+}
+
+section div.chapter.home {
+  background-color: rgba(26, 61, 132, 0.7);
+}
+
+section div.chapter-img {
+  width: 100%;
+  height: 250px;
+  margin-bottom: 20px;
+}
+
+section.home .story{
+  background: none;
+}
+
+section.home .chapter{
+  /*background-color: rgba(26, 61, 132, 0.7);*/
+}
+
+section.home .chapter-white{
+  background: none;
+}
+
+section .chapter-content {
+  padding: 30px 60px;
+}
+
+.citation { 
+  position: relative;
+  height: 350px;
+  z-index: 1;
+  margin: auto;
+  top: 150px;
+  z-index: 1;  
+  margin: auto;  
+  font-size: 4rem;      
+  padding: 20px 30px;
+  font-size: 1.3rem;
+  line-height: 2rem;
+}
+
+.citation.home {
+  padding-top: 110px;
+  top: 240px;
+}
+
+.citation {
+  color: #97D4C8;  
+  margin: 30px 160px;  
+}
+
+.citation .text {
+  font-size: 1.4rem;
+  text-align: left;
+  line-height: 2.3rem;
+  font-weight: 100;
+}  
+
+.citation .author {
+  text-align: right;
+}
 .imageHolder::after {
   border-left: 20px solid #FFF;
 }
-
-/*.left-white {
-  position: absolute;
-  width: 5%;
-  height: 100%;
-  left: 0;  
-  background-color: #FFF;
-  border-bottom: 2px solid #fff;
-  border-top: 2px solid #fff;
-  z-index: 5;
-}
-
-.right-white {
-  position: absolute;
-  width: 5%;
-  height: 100%;
-  right: 0;  
-  background-color: #FFF;
-  border-bottom: 2px solid #fff;
-  border-top: 2px solid #fff;
-  z-index: 5;  
-}*/
 
 #footer {
   width: 100%;
@@ -87,12 +157,12 @@ section div.chapter-content {
 
 div.header_menu {
   position: fixed;  
-  width: 100%;
-  height: 80px;        
+  height: 90px;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+  width: 1000px;
   margin: 0 auto;
   background-color: #FFF;
   z-index: 2;
@@ -131,17 +201,11 @@ div.header_menu .title {
   bottom: 0;  
 }
 
-div.menu-nav {  
-  border-radius: 2px;    
-  padding: 16px 24px;
-  background: #fff;
-}
-
-div.menu-nav.toggled {
+header.menu-nav.toggled {
   display: block;
 }
 
-div.menu-nav:after {
+header.menu-nav:after {
   position: absolute;
   top: -10px;
   right: 6px;
@@ -151,36 +215,31 @@ div.menu-nav:after {
   content: '';
 }
 
-div.menu-nav ul {
-  width: 1000px;
+header.menu-nav ul {  
   margin: auto;
   font-family: 'Open Sans', Helvetica, sans-serif;  
   list-style: none;
+  margin: 0px 10px;
 }
 
-div.menu-nav ul li:nth-child(n+2) {
+header.menu-nav ul li:nth-child(n+2) {
   padding-left: 10px;
   height: 7px;
-  bottom: 8px;
+  bottom: 16px;
   position: relative;
 }
 
-div.menu-nav ul li:nth-child(2) {
-  /* border-left: 2px solid #808285; */
+header.menu-nav ul li:nth-child(2) {
+  border-left: 2px solid #808285;
   padding-left: 10px;
   height: 7px;
-  bottom: 8px;
+  bottom: 16px;
   position: relative;
 }
 
-div.menu-nav > ul > li:nth-child(n+1) > a {
-/*  font-size: 16px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #000;
-  text-decoration: none;*/
-  font-size: 20px;
-  font-weight: 700;
+header.menu-nav > ul > li:nth-child(n+1) > a {
+  font-size: 18px;
+  font-weight: 300;
   text-transform: uppercase;
   color: #000;
   bottom: 5px;
@@ -188,49 +247,12 @@ div.menu-nav > ul > li:nth-child(n+1) > a {
   text-decoration: none;
 }
 
-
-
-div.menu-nav a:visited {
+header.menu-nav a:visited {
   color: #808285;
 }
 
-div.menu-nav a:hover {
+header.menu-nav a:hover {
   color: #808285;
-}
-
-
-.citation {
-  position: absolute;
-  width: 40%;  
-  left: 0;
-  bottom: 50%;
-  right: 0;  
-  font-size: 1rem;
-  color: #97D4C8;
-  line-height: 2rem;
-  padding: 10px 0px;
-  padding: 30px;
-  margin: auto;
-  background-color: rgba(26, 61, 132, 0.9);
-}
-
-.citation.home {
-  bottom: 10%;
-}
-
-.citation .text {
-  font-size: 1.3rem;
-  text-align: left;
-  line-height: 1.8rem;
-  font-weight: 100;
-  /* width: 800px; */
-  margin: auto; 
-}
-
-.citation .text .author {
-  font-family: "Open Sans";
-  font-size: 1rem;
-  text-align: left;  
 }
 
 /* Logo
@@ -238,18 +260,11 @@ div.menu-nav a:hover {
 
 .logo-white {
   width: 471px;
-  height: 314px;
   overflow: auto;
-  position: absolute;
-  /* margin: auto; */
-  border-radius: 0px;
-  top: 180px;
-  left: 32px;
-  bottom: 0;
-  right: 0;
-  text-align: center;
-  overflow: visible;
-  background-color: rgba(26, 61, 132, 0.8);
+  position: relative;
+  margin: auto auto;
+  top: 100px;  
+  overflow: visible;  
 }
 
 .logo-home {
@@ -284,6 +299,19 @@ div.menu-nav a:hover {
   top: 0;
 }
 
+.fake-lamp {
+  cursor: pointer;
+  width: 60px;
+  height: 80px;  
+  margin: auto;
+  position: relative;      
+  z-index: 3;
+}
+
+.hide {
+  display: none;
+}
+  
 @media only screen and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
   .logo-white{
     height: 528px;
