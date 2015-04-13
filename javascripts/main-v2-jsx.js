@@ -149,11 +149,11 @@ var ChapterList = React.createClass({
           var boundSlideClick = self.slideButtonClick.bind(null, index, section.chapter.path);
           var boundLightOver = self.lightButtonOver.bind(null, index, section.chapter.path);
           var boundLightOut = self.lightButtonOut.bind(null, index, section.chapter.path);
-
+          var keyChap = "chap"+index;
           
 
           chapterMarkup = 
-          <section className={homeCss} id={section.chapter.path} style={sectionHeight}>
+          <section key={keyChap} className={homeCss} id={section.chapter.path} style={sectionHeight}>
             <div className="story">
               <div className="layout">
                 <div className="layout-content">
@@ -161,20 +161,20 @@ var ChapterList = React.createClass({
                   <div className="chapter">
                     <div className="chapter-white animated">  
                       <div className="chapter-content">
-                        <SlideButton onSlideButtonClick={boundSlideClick} key={section.chapter.path} />
+                        <SlideButton onSlideButtonClick={boundSlideClick} />
                         <span>&nbsp;</span>              
                         <h1>{section.chapter.title}</h1>                  
                         <div className="grid">
                           <div className="grid__col grid__col--1-of-2">                            
-                            <ChapterParagraph paragraphs={section.chapter.paragraphsCol1} key={section.chapter.path} ></ChapterParagraph>
+                            <ChapterParagraph paragraphs={section.chapter.paragraphsCol1}></ChapterParagraph>
                           </div>
                           <div className="grid__col grid__col--1-of-2">                            
-                            <ChapterParagraph paragraphs={section.chapter.paragraphsCol2} key={section.chapter.path} ></ChapterParagraph>
+                            <ChapterParagraph paragraphs={section.chapter.paragraphsCol2}></ChapterParagraph>
                           </div>
                         </div>
                       </div>                                    
                     </div>
-                    <Citation citation={section.chapter.citation} key={section.chapter.path} />
+                    <Citation citation={section.chapter.citation} />
                   </div>
                 </div>
               </div>                          
@@ -182,7 +182,7 @@ var ChapterList = React.createClass({
             <div style={parallaxStyle} className="parallax"></div>                        
           </section>
         } else {          
-          chapterMarkup = '';
+          chapterMarkup = React.DOM.div();
         }
 
         return React.DOM.div({}, chapterMarkup);

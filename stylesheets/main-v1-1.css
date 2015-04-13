@@ -78,10 +78,11 @@ section div.chapter {
 }
 
 section div.chapter-white {  
-  background-color: #FFF;
+    background-color: #FFF;
   position: relative;
   padding-top: 50px;
   height: 600px;
+  top: 100px;
   z-index: 3;
 }
 
