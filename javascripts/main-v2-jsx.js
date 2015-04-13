@@ -126,7 +126,7 @@ var ChapterList = React.createClass({
       var chapterMarkup = "";      
       var self = this;
       var sectionHeight = {
-        height : $(window).height()
+        height : $(window).outerHeight(true)
       };
 
       var chaptersNodes = this.props.data.map(function(section, index) {              
@@ -153,7 +153,7 @@ var ChapterList = React.createClass({
           
 
           chapterMarkup = 
-          <section className={homeCss} key={section.chapter.path} id={section.chapter.path} style={sectionHeight}>
+          <section className={homeCss} id={section.chapter.path} style={sectionHeight}>
             <div className="story">
               <div className="layout">
                 <div className="layout-content">
@@ -161,20 +161,20 @@ var ChapterList = React.createClass({
                   <div className="chapter">
                     <div className="chapter-white animated">  
                       <div className="chapter-content">
-                        <SlideButton onSlideButtonClick={boundSlideClick} />
+                        <SlideButton onSlideButtonClick={boundSlideClick} key={section.chapter.path} />
                         <span>&nbsp;</span>              
                         <h1>{section.chapter.title}</h1>                  
                         <div className="grid">
                           <div className="grid__col grid__col--1-of-2">                            
-                            <ChapterParagraph paragraphs={section.chapter.paragraphsCol1}></ChapterParagraph>
+                            <ChapterParagraph paragraphs={section.chapter.paragraphsCol1} key={section.chapter.path} ></ChapterParagraph>
                           </div>
                           <div className="grid__col grid__col--1-of-2">                            
-                            <ChapterParagraph paragraphs={section.chapter.paragraphsCol2}></ChapterParagraph>
+                            <ChapterParagraph paragraphs={section.chapter.paragraphsCol2} key={section.chapter.path} ></ChapterParagraph>
                           </div>
                         </div>
                       </div>                                    
                     </div>
-                    <Citation citation={section.chapter.citation} />
+                    <Citation citation={section.chapter.citation} key={section.chapter.path} />
                   </div>
                 </div>
               </div>                          
@@ -185,9 +185,7 @@ var ChapterList = React.createClass({
           chapterMarkup = '';
         }
 
-        return (                      
-            {chapterMarkup}          
-        );
+        return React.DOM.div({}, chapterMarkup);
       });
     }
     
