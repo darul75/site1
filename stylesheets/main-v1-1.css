@@ -9,7 +9,7 @@ body{
 ul.menu li {
   display: inline-block;
   padding: 8px 0px;
-  margin: 0px 10px;  
+  margin: 0px 5px;
 }
 
 section {  
@@ -27,17 +27,18 @@ section#contact {
 }
 
 section h1 {
-  font-family: "Open Sans";
+  font-family: 'Bitter', Helvetica, sans-serif;
   font-size: 1.4rem;
   text-transform: uppercase;
   line-height: 2rem;
+  font-weight: 100;
   width: 50%;
 }
 section p{
-    font-size: 1.2rem;
+  font-family: "Open Sans",Helvetica,Arial,sans-serif;
+  font-size: 16px;
   line-height: 1.6rem;
   font-weight: 100;
-
 }
 section article{position:absolute;top:240px;left:40px;width:300px;z-index:4;}
 
@@ -80,7 +81,7 @@ section div.chapter-white {
   background-color: #FFF;
   position: relative;
   padding-top: 50px;
-  height: 700px;
+  height: 600px;
   z-index: 3;
 }
 
@@ -210,7 +211,7 @@ header.menu-nav:after {
 header.menu-nav ul {
   width: 1000px;
   margin: auto;
-  font-family: 'Open Sans', Helvetica, sans-serif;  
+  font-family: Helvetica, sans-serif;;
   list-style: none;
   margin: 0px 10px;
 }
