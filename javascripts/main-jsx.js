@@ -227,7 +227,7 @@ var LightButton = React.createClass({
   render: function() {    
     return (
       <div className="fake-lamp" onMouseEnter={this.mouseOver} onMouseLeave={this.mouseOut}>
-        <i className="fa fa-lightbulb-o fa-5x fa-inverse"></i>
+        <i className="fa fa-adjust fa-3x fa-inverse animated bounce"></i>
       </div>
     );
   }
