@@ -148,18 +148,19 @@ var ChapterList = React.createClass({
 
           } 
           
-          var height = section.immersive ? sectionHeight : {};
+          var height = section.immersive ? sectionHeight : {height:600};
           var chapterClass = section.immersive ? '': 'chapter-white animated';
+          var titleMarkup = section.chapter.title ? <h1>{section.chapter.title}</h1> : '';
 
             chapterMarkup = 
           <section className={homeCss} key={section.chapter.path} id={section.chapter.path} style={height}>
-            <div className="story">
+            <div className="story" style={height}>
               <div className="layout">
                 <div className="layout-content">
                   <div className="chapter">
                     <div className={chapterClass}>  
                       <div className="chapter-content">     
-                        <h1>{section.chapter.title}</h1>
+                        {titleMarkup}
                         {logo}
                         <Citation citation={section.chapter.citation} />
                         {lightButton}

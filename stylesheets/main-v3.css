@@ -12,7 +12,8 @@ body {
   font-family: "Bitter";  
   font-size: 1.4rem;  
   text-transform: uppercase;
-  width: 100%;  
+  width: 40%;
+  padding-top: 130px; 
 }
 
 p {
@@ -57,6 +58,10 @@ section div.no-bg {
   background: none;
 }
 
+section .layout, section .layout-content {
+  height: inherit;
+}
+
 section div.chapter {
   position: relative;  
   height: 100%;
@@ -68,12 +73,13 @@ section div.chapter {
 section div.chapter-white {  
   background-color: #FFF;
   position: relative;
-  padding-top: 50px;  
-  z-index: 3;
+  padding: 0 50px; 
+  z-index: 3;  
+  height: inherit;
 }
 
 #contact div.chapter-white {    
-  height: 860px;
+  height: 860px;  
 }
 
 section div.chapter.home {
@@ -88,10 +94,10 @@ section div.chapter-img {
 
 section.home .story{
   background: none;
-}
+}  
 
-section.home .chapter{
-  /*background-color: rgba(26, 61, 132, 0.7);*/
+section#home .chapter-content{
+  padding-top: 100px;
 }
 
 section.home .chapter-white{
@@ -99,7 +105,7 @@ section.home .chapter-white{
 }
 
 section .chapter-content {
-  padding: 30px 60px;
+  /*padding: 30px 60px;*/
 }
 
 .citation { 
@@ -123,7 +129,7 @@ section .chapter-content {
 
 .citation {
   color: #97D4C8;  
-  margin: 30px 160px;  
+  margin: 0 160px;  
 }
 
 .citation .text {
